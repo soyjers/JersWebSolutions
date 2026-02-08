@@ -15,7 +15,8 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="img/logo/logo.svg" class="logo-img"></a>
-            <ul class="nav-links">
+            <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="paquetes.html">Planes</a></li>
@@ -29,34 +30,54 @@
         <div class="container" data-aos="fade-up">
             <span class="badge">Hablemos de Negocios</span>
             <h1>Inicia tu <span class="text-gold">Transformación</span></h1>
-            <p style="max-width: 600px; margin: 20px auto; color: var(--text-muted);">Estamos listos para escuchar tu visión.</p>
+            <p style="max-width: 600px; margin: 20px auto; color: var(--text-muted);">
+                Selecciona tu canal preferido. Respondemos en menos de 2 horas.
+            </p>
         </div>
     </header>
 
     <section class="section" style="padding-top: 0;">
         <div class="container">
+            
             <div class="contact-split-layout">
                 
                 <div class="contact-info-col" data-aos="fade-right">
                     <div class="form-box" style="height: 100%;">
                         <h2 style="margin-bottom: 20px; font-size: 1.8rem;">Canales Directos</h2>
-                        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem;">Haz clic en una opción:</p>
+                        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem;">
+                            Haz clic en cualquiera de las opciones para contactarnos de inmediato.
+                        </p>
 
                         <a href="https://wa.me/573102948255" target="_blank" class="info-item">
                             <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
-                            <div><h4>WhatsApp</h4><span class="link-gold">Chat Directo <i class="fas fa-arrow-right"></i></span></div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <span class="link-gold">Chat Directo <i class="fas fa-arrow-right" style="font-size: 0.8em;"></i></span>
+                            </div>
                         </a>
+
                         <a href="tel:+573102948255" class="info-item">
                             <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div><h4>Llamada</h4><span class="link-gold">+57 310 294 8255</span></div>
+                            <div>
+                                <h4>Llamada</h4>
+                                <span class="link-gold">+57 310 294 8255</span>
+                            </div>
                         </a>
+
                         <a href="https://instagram.com/jerswebsolutions" target="_blank" class="info-item">
                             <div class="info-icon"><i class="fab fa-instagram"></i></div>
-                            <div><h4>Instagram</h4><span class="link-gold">@jerswebsolutions</span></div>
+                            <div>
+                                <h4>Instagram (DM)</h4>
+                                <span class="link-gold">@jerswebsolutions</span>
+                            </div>
                         </a>
+
                         <a href="mailto:contacto@jerswebsolutions.digital" class="info-item">
                             <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div><h4>Email</h4><span class="link-gold">contacto@jerswebsolutions.digital</span></div>
+                            <div>
+                                <h4>Email</h4>
+                                <span class="link-gold">contacto@jerswebsolutions.digital</span>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -64,36 +85,43 @@
                 <div class="contact-form-col" data-aos="fade-left">
                     <div class="form-box">
                         <h3 style="margin-bottom: 30px; text-align: center;">Cuéntanos tu Proyecto</h3>
+                        
                         <form action="#" method="POST">
                             <div class="input-group">
                                 <input type="text" id="name" name="name" required placeholder=" ">
                                 <label for="name">Nombre Completo</label>
                             </div>
+
                             <div class="input-group">
                                 <input type="email" id="email" name="email" required placeholder=" ">
                                 <label for="email">Correo Electrónico</label>
                             </div>
+
                             <div class="input-group">
                                 <select id="service" name="service" required style="color: #fff;">
                                     <option value="" disabled selected></option>
-                                    <option value="web">Desarrollo Web</option>
-                                    <option value="ecommerce">Tienda Online</option>
-                                    <option value="app">App Web / SaaS</option>
-                                    <option value="ads">Marketing / Ads</option>
-                                    <option value="branding">Branding</option>
+                                    <option value="web" style="background:#111;">Desarrollo Web / Landing</option>
+                                    <option value="ecommerce" style="background:#111;">Tienda Online (E-commerce)</option>
+                                    <option value="app" style="background:#111;">Aplicación Web / SaaS</option>
+                                    <option value="ads" style="background:#111;">Publicidad Digital (Ads)</option>
+                                    <option value="branding" style="background:#111;">Diseño & Branding</option>
+                                    <option value="otro" style="background:#111;">Otro / Consulta</option>
                                 </select>
                                 <label for="service" class="select-label">Servicio de Interés</label>
                             </div>
+
                             <div class="input-group">
                                 <textarea id="message" name="message" required placeholder=" "></textarea>
                                 <label for="message">Detalles del Proyecto</label>
                             </div>
+
                             <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
                         </form>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -139,7 +167,11 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true, offset: 100 });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('active'); }); });
+    </script>
 
 </body>
 </html>

@@ -7,14 +7,63 @@
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .legal-box {
+            background: #0f0f0f;
+            padding: 60px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            font-family: 'Inter', sans-serif;
+        }
+        .legal-item {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .legal-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .legal-item h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .legal-item p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .legal-item ul {
+            list-style: disc;
+            padding-left: 20px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        .legal-item li {
+            margin-bottom: 8px;
+        }
+        @media (max-width: 768px) {
+            .legal-box { padding: 30px 20px; }
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="img/logo/logo.svg" class="logo-img"></a>
-            <ul class="nav-links">
+            <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="paquetes.html">Planes</a></li>
@@ -25,34 +74,77 @@
     </nav>
 
     <header class="section" style="padding-top: 150px; text-align: center;">
-        <div class="container">
-            <h1>Información <span class="text-gold">Legal</span></h1>
-            <p>Transparencia y confianza en cada proyecto.</p>
+        <div class="container" data-aos="fade-up">
+            <span class="badge">Transparencia Total</span>
+            <h1>Términos & <span class="text-gold">Condiciones</span></h1>
+            <p style="max-width: 600px; margin: 20px auto; color: var(--text-muted);">
+                Marco legal y políticas de servicio para garantizar el éxito de tu proyecto.
+                <br><small style="color: #666;">Última actualización: Febrero 2026</small>
+            </p>
         </div>
     </header>
 
     <section class="section" style="padding-top: 0;">
-        <div class="container" style="color: #ccc; max-width: 800px;">
+        <div class="container" style="max-width: 900px;" data-aos="fade-up">
             
-            <h3 style="color: #fff; margin-bottom: 20px;">1. Términos y Condiciones</h3>
-            <p style="margin-bottom: 30px;">
-                Al contratar los servicios de Jers Web Solutions, el cliente acepta que los pagos se realizan 50% al inicio y 50% contra entrega (salvo acuerdo diferente). Los tiempos de entrega dependen de la entrega oportuna de material por parte del cliente.
-            </p>
+            <div class="legal-box">
+                
+                <div class="legal-item">
+                    <h3><i class="fas fa-file-contract text-gold"></i> 1. Aceptación del Servicio</h3>
+                    <p>
+                        Al contratar los servicios de <strong>Jers Web Solutions</strong>, el cliente acepta los términos aquí descritos. Estos términos constituyen un acuerdo vinculante para proteger a ambas partes y asegurar la calidad del desarrollo.
+                    </p>
+                </div>
 
-            <h3 style="color: #fff; margin-bottom: 20px;">2. Política de Privacidad</h3>
-            <p style="margin-bottom: 30px;">
-                Respetamos tu privacidad. Los datos recolectados a través de nuestros formularios (nombre, correo, teléfono) se utilizan exclusivamente para fines de contacto comercial y no serán compartidos con terceros sin tu consentimiento explícito.
-            </p>
+                <div class="legal-item">
+                    <h3><i class="fas fa-money-bill-wave text-gold"></i> 2. Pagos y Facturación</h3>
+                    <p>
+                        Para iniciar cualquier proyecto, requerimos un anticipo del <strong>50% del valor total</strong>. El 50% restante se cancelará contra entrega final del sitio web o software, una vez el cliente haya revisado y aprobado el funcionamiento.
+                    </p>
+                    <ul>
+                        <li>Los pagos pueden realizarse vía Transferencia Bancaria, Nequi , Llaves y DolarApp.</li>
+                        <li>En caso de cancelación del proyecto por parte del cliente una vez iniciado, el anticipo del 50% no será reembolsable, cubriendo así horas de trabajo y recursos asignados.</li>
+                    </ul>
+                </div>
 
-            <h3 style="color: #fff; margin-bottom: 20px;">3. Soporte y Garantía</h3>
-            <p style="margin-bottom: 30px;">
-                Todos nuestros desarrollos cuentan con una garantía de 30 días post-entrega para corrección de errores técnicos imputables al código original. Cambios de diseño o nuevas funcionalidades se cotizarán por separado.
-            </p>
+                <div class="legal-item">
+                    <h3><i class="fas fa-clock text-gold"></i> 3. Tiempos de Entrega</h3>
+                    <p>
+                        Los tiempos de desarrollo (ej: 5 días hábiles para Landing Pages) comienzan a contar <strong>a partir del momento en que el cliente entrega todo el material necesario</strong> (logos, textos, imágenes).
+                    </p>
+                    <p>
+                        Jers Web Solutions no se hace responsable por retrasos derivados de la falta de entrega de información por parte del cliente.
+                    </p>
+                </div>
 
-            <h3 style="color: #fff; margin-bottom: 20px;">4. Propiedad Intelectual</h3>
-            <p style="margin-bottom: 30px;">
-                Una vez finalizado el pago total del proyecto, los derechos patrimoniales del código y diseño son transferidos al cliente. Jers Web Solutions se reserva el derecho de mostrar el trabajo en su portafolio como muestra de capacidad técnica.
-            </p>
+                <div class="legal-item">
+                    <h3><i class="fas fa-copyright text-gold"></i> 4. Propiedad Intelectual</h3>
+                    <p>
+                        Una vez finalizado el pago total del proyecto, <strong>el cliente adquiere el 100% de los derechos patrimoniales</strong> sobre el sitio web, diseño y código fuente entregado.
+                    </p>
+                    <p>
+                        Jers Web Solutions se reserva el derecho de mostrar el proyecto en su portafolio web y redes sociales como muestra de su capacidad técnica y creativa, salvo que exista un acuerdo de confidencialidad (NDA) previo.
+                    </p>
+                </div>
+
+                <div class="legal-item">
+                    <h3><i class="fas fa-shield-alt text-gold"></i> 5. Soporte y Garantía</h3>
+                    <p>
+                        Ofrecemos una <strong>garantía de 30 días calendario</strong> post-entrega. Durante este periodo, corregiremos sin costo cualquier error técnico (bugs) imputable a nuestro código.
+                    </p>
+                    <p>
+                        Esta garantía <strong>NO incluye</strong>: cambios de diseño no acordados, nuevas funcionalidades, o daños causados por manipulación del código por parte de terceros ajenos a nuestra agencia.
+                    </p>
+                </div>
+
+                <div class="legal-item">
+                    <h3><i class="fas fa-user-lock text-gold"></i> 6. Política de Privacidad</h3>
+                    <p>
+                        Respetamos tu información. Los datos recolectados a través de nuestros formularios (nombre, correo, teléfono) se utilizan exclusivamente para fines de contacto comercial y desarrollo del proyecto. No vendemos ni compartimos tu información con terceros.
+                    </p>
+                </div>
+
+            </div>
 
         </div>
     </section>
@@ -62,7 +154,7 @@
             <div class="footer-grid-4">
                 <div class="footer-col">
                     <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
+                    <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
@@ -78,26 +170,32 @@
                     <ul class="footer-links">
                         <li><a href="legal.html">Política de Privacidad</a></li>
                         <li><a href="legal.html">Términos y Condiciones</a></li>
-                        <li><a href="legal.html">Soporte</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
                         <li><i class="fas fa-phone-alt"></i> +57 310 294 8255</li>
                         <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 Jers Web Solutions. Todos los derechos reservados.</div>
+            <div class="footer-bottom">&copy; 2015 - 2026 Jers Web Solutions. Todos los derechos reservados.</div>
         </div>
     </footer>
+
     <div class="floating-container">
-        <a href="https://wa.me/573102948255?text=Hola%20Jers,%20tengo%20una%20duda%20legal." target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
+        <a href="https://wa.me/573102948255" target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
         <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element"><i class="fab fa-instagram"></i><span class="float-tooltip">Instagram</span></a>
         <div class="float-main"><i class="fas fa-comments"></i></div>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('active'); }); });
+    </script>
 
 </body>
 </html>

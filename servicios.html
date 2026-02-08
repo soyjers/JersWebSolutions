@@ -15,7 +15,8 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="img/logo/logo.svg" class="logo-img"></a>
-            <ul class="nav-links">
+            <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html" class="active">Servicios</a></li>
                 <li><a href="paquetes.html">Planes</a></li>
@@ -173,7 +174,11 @@
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true, offset: 100 });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('active'); }); });
+    </script>
 
 </body>
 </html>
