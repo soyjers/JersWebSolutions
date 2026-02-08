@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,7 +26,7 @@
     </nav>
 
     <header class="section" style="padding-top: 150px; text-align: center;">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Inversión <span class="text-gold">Inteligente</span></h2>
                 <p>Tecnología de punta empaquetada para maximizar tu retorno de inversión (ROI).</p>
@@ -35,10 +36,9 @@
 
     <section class="section" style="padding-top: 0;">
         <div class="container">
-            
             <div class="grid-3">
                 
-                <div class="package-card">
+                <div class="package-card" data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <span style="color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Startups</span>
                         <h3 style="font-size: 2rem; margin: 10px 0;">Presencia</h3>
@@ -55,7 +55,7 @@
                     <a href="https://wa.me/573102948255?text=Me%20interesa%20el%20Plan%20Presencia" class="btn btn-outline" style="width: 100%; margin-top: 30px;">Consultar</a>
                 </div>
 
-                <div class="package-card premium">
+                <div class="package-card premium" data-aos="fade-up" data-aos-delay="200">
                     <div class="best-seller-badge">Más Vendido</div>
                     <div>
                         <span style="color: var(--gold-text); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Corporativo</span>
@@ -74,7 +74,7 @@
                     <a href="https://wa.me/573102948255?text=Me%20interesa%20el%20Plan%20Growth" class="btn btn-primary" style="width: 100%; margin-top: 30px;">Cotizar Plan</a>
                 </div>
 
-                <div class="package-card">
+                <div class="package-card" data-aos="fade-up" data-aos-delay="300">
                     <div>
                         <span style="color: #888; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Enterprise</span>
                         <h3 style="font-size: 2rem; margin: 10px 0;">Sistemas</h3>
@@ -93,7 +93,7 @@
 
             </div>
 
-            <div class="custom-plan-section">
+            <div class="custom-plan-section" data-aos="fade-up">
                 <i class="fas fa-fingerprint text-gold" style="font-size: 3rem; margin-bottom: 20px;"></i>
                 <h2 style="color: #fff; font-size: 2.5rem; margin-bottom: 15px;">¿Necesitas algo a la medida?</h2>
                 <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px;">
@@ -109,12 +109,50 @@
         </div>
     </section>
 
+    <section class="section" style="padding-top: 0;" data-aos="fade-up">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-title">
+                <h2>Preguntas <span class="text-gold">Frecuentes</span></h2>
+            </div>
+            
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Qué pasa si quiero cambiar algo del plan o diseño? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p><strong>Total Flexibilidad.</strong> No somos una fábrica de sitios genéricos. Trabajas directamente conmigo, lo que garantiza que si necesitas ajustar el rumbo, agregar una sección o cambiar el diseño, lo hacemos. Tienes revisiones incluidas para asegurar tu satisfacción total.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿El sitio será realmente mío? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Absolutamente. Al finalizar el pago, te entregamos acceso total al código, al panel de administración y a las credenciales de hosting. Eres dueño del 100% de tu activo digital.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Me dejarán solo después de la entrega? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Jamás. Todos nuestros planes incluyen un periodo de garantía y soporte técnico post-entrega. Además, ofrecemos planes de mantenimiento opcionales para que nunca tengas que preocuparte por actualizaciones técnicas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuánto tiempo tardan en entregar? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Somos ágiles. Una Landing Page profesional está lista en 3-5 días hábiles. Un sitio corporativo completo o E-commerce toma entre 10 y 20 días hábiles. Cumplimos los plazos pactados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer-big">
         <div class="container">
             <div class="footer-grid-4">
                 <div class="footer-col">
                     <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
+                    <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
@@ -130,36 +168,38 @@
                     <ul class="footer-links">
                         <li><a href="legal.html">Política de Privacidad</a></li>
                         <li><a href="legal.html">Términos y Condiciones</a></li>
-                        <li><a href="legal.html">Soporte</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
                         <li><i class="fas fa-phone-alt"></i> +57 310 294 8255</li>
                         <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 Jers Web Solutions. Todos los derechos reservados.</div>
+            <div class="footer-bottom">&copy; 2015 - 2026 Jers Web Solutions. Todos los derechos reservados.</div>
         </div>
     </footer>
 
-
     <div class="floating-container">
-        <a href="https://wa.me/573102948255?text=Hola%20Jers,%20quisiera%20cotizar%20un%20proyecto." target="_blank" class="float-element">
-            <i class="fab fa-whatsapp"></i>
-            <span class="float-tooltip">WhatsApp</span>
-        </a>
-        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element">
-            <i class="fab fa-instagram"></i>
-            <span class="float-tooltip">Instagram</span>
-        </a>
-        <div class="float-main">
-            <i class="fas fa-comments"></i>
-        </div>
+        <a href="https://wa.me/573102948255" target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
+        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element"><i class="fab fa-instagram"></i><span class="float-tooltip">Instagram</span></a>
+        <div class="float-main"><i class="fas fa-comments"></i></div>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        
+        // FAQ Script
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 
 </body>
 </html>

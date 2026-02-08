@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,7 +26,7 @@
     </nav>
 
     <header class="section" style="padding-top: 150px; text-align: center;">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <span class="badge">Ecosistema 360°</span>
             <h1>Soluciones <span class="text-gold">Integrales</span></h1>
             <p>Todo lo que tu empresa necesita para triunfar en internet, en un solo lugar.</p>
@@ -35,127 +36,107 @@
     <section class="section" style="padding-top: 0;">
         <div class="container">
             
-            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;">
+            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;" data-aos="fade-right">
                 <i class="fas fa-code text-gold"></i> Desarrollo Web & Software
             </h2>
             <div class="grid-2" style="margin-bottom: 60px;">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up">
                     <h3>Landing Pages</h3>
-                    <p>Páginas de alto impacto diseñadas para campañas publicitarias (One Page).</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Diseño Persuasivo</li>
-                        <li><i class="fas fa-check"></i> Carga Instantánea</li>
-                    </ul>
+                    <p>Páginas de aterrizaje de alto impacto (One Page) enfocadas 100% en conversión y ventas.</p>
+                    <ul><li>Diseño Persuasivo</li><li>Carga Instantánea</li></ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>Sitios Corporativos</h3>
-                    <p>Tu oficina digital abierta 24/7. Profesionalismo, confianza y estructura robusta.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Multi-idioma</li>
-                        <li><i class="fas fa-check"></i> Autoadministrable</li>
-                    </ul>
+                    <p>Tu oficina digital abierta 24/7. Estructura robusta para proyectar confianza institucional.</p>
+                    <ul><li>Multi-idioma</li><li>Autoadministrable</li></ul>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>E-Commerce</h3>
                     <p>Tiendas virtuales completas para vender productos físicos o digitales sin límites.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Pasarelas de Pago</li>
-                        <li><i class="fas fa-check"></i> Gestión de Envíos</li>
-                    </ul>
+                    <ul><li>Pasarelas de Pago</li><li>Gestión de Envíos</li></ul>
                 </div>
-                <div class="service-card">
-                    <h3>Aplicaciones Web (SaaS)</h3>
-                    <p>Software a la medida en la nube para gestionar tu negocio (CRM, ERP).</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Dashboards</li>
-                        <li><i class="fas fa-check"></i> Bases de Datos</li>
-                    </ul>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Web Apps (SaaS)</h3>
+                    <p>Desarrollo de software a medida en la nube para gestionar procesos complejos.</p>
+                    <ul><li>Dashboards</li><li>Bases de Datos</li></ul>
                 </div>
             </div>
 
-            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;">
+            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;" data-aos="fade-right">
                 <i class="fas fa-server text-gold"></i> Infraestructura & Soporte
             </h2>
-            <div class="grid-3" style="margin-bottom: 60px;">
-                <div class="service-card">
+            <div class="grid-2" style="margin-bottom: 60px;">
+                <div class="service-card" data-aos="fade-up">
                     <h3>Mantenimiento Web</h3>
-                    <p>Planes mensuales para que tu web siempre esté al día.</p>
+                    <p>Planes mensuales para que tu web siempre esté actualizada, segura y sin errores.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>Optimización (WPO)</h3>
-                    <p>Aceleramos tu sitio web para que Google lo ame.</p>
+                    <p>Aceleramos tu sitio web. Mejoramos el Core Web Vitals para que Google te ame.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Hosting Corporativo</h3>
-                    <p>Alojamiento de alta velocidad y correos profesionales.</p>
+                    <p>Alojamiento de alta velocidad en servidores AWS o Google Cloud. Correos profesionales.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Ciberseguridad</h3>
+                    <p>Blindaje contra ataques, copias de seguridad automáticas y certificados SSL avanzados.</p>
                 </div>
             </div>
 
-            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;">
+            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;" data-aos="fade-right">
                 <i class="fas fa-rocket text-gold"></i> Marketing & Growth
             </h2>
-            <div class="grid-3" style="margin-bottom: 60px;">
-                <div class="service-card">
+            <div class="grid-2" style="margin-bottom: 60px;">
+                <div class="service-card" data-aos="fade-up">
                     <h3>Posicionamiento SEO</h3>
-                    <p>Estrategias para aparecer primero en Google.</p>
+                    <p>Estrategias on-page y off-page para aparecer primero en Google orgánicamente.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Publicidad Digital (Ads)</h3>
-                    <p>Gestión de campañas en Google y Meta.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Publicidad (Ads)</h3>
+                    <p>Campañas de pago en Meta (Facebook/Instagram) y Google Ads con alto ROI.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <h3>Email Marketing</h3>
-                    <p>Automatización de correos para fidelizar clientes.</p>
+                    <p>Automatización de correos y funnels de venta para fidelizar clientes.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Social Media</h3>
+                    <p>Estrategia de contenidos y diseño de grids para redes sociales.</p>
                 </div>
             </div>
 
-            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;">
+            <h2 style="margin-bottom: 30px; border-left: 4px solid var(--gold-text); padding-left: 15px;" data-aos="fade-right">
                 <i class="fas fa-pen-nib text-gold"></i> Diseño & Branding
             </h2>
             <div class="grid-2" style="margin-bottom: 60px;">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up">
                     <h3>Identidad Visual</h3>
-                    <p>Logotipos y manuales de marca que transmiten lujo.</p>
+                    <p>Creación de logotipos y manuales de marca que transmiten lujo y autoridad.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <h3>Diseño UX/UI</h3>
-                    <p>Prototipado de interfaces modernas (Figma).</p>
+                    <p>Prototipado de interfaces modernas y funcionales en Figma.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Material Publicitario</h3>
-                    <p>Diseño de banners, brochures y presentaciones.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Rebranding</h3>
+                    <p>Modernización de marcas antiguas para adaptarlas al mercado digital actual.</p>
                 </div>
-                <div class="service-card">
-                    <h3>Social Media Kit</h3>
-                    <p>Plantillas editables para tus redes sociales.</p>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Material Gráfico</h3>
+                    <p>Diseño de banners, brochures digitales y presentaciones corporativas.</p>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <div class="floating-container">
-        <a href="https://wa.me/573102948255?text=Hola%20Jers,%20quisiera%20cotizar%20un%20proyecto." target="_blank" class="float-element">
-            <i class="fab fa-whatsapp"></i>
-            <span class="float-tooltip">WhatsApp</span>
-        </a>
-        
-        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element">
-            <i class="fab fa-instagram"></i>
-            <span class="float-tooltip">Instagram</span>
-        </a>
-
-        <div class="float-main">
-            <i class="fas fa-comments"></i>
-        </div>
-    </div>
-
     <footer class="footer-big">
         <div class="container">
             <div class="footer-grid-4">
                 <div class="footer-col">
                     <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
+                    <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
@@ -171,23 +152,28 @@
                     <ul class="footer-links">
                         <li><a href="legal.html">Política de Privacidad</a></li>
                         <li><a href="legal.html">Términos y Condiciones</a></li>
-                        <li><a href="legal.html">Soporte</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
                         <li><i class="fas fa-phone-alt"></i> +57 310 294 8255</li>
                         <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 Jers Web Solutions. Todos los derechos reservados.</div>
+            <div class="footer-bottom">&copy; 2015 - 2026 Jers Web Solutions. Todos los derechos reservados.</div>
         </div>
     </footer>
 
+    <div class="floating-container">
+        <a href="https://wa.me/573102948255" target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
+        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element"><i class="fab fa-instagram"></i><span class="float-tooltip">Instagram</span></a>
+        <div class="float-main"><i class="fas fa-comments"></i></div>
+    </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true, offset: 100 });</script>
 
 </body>
 </html>

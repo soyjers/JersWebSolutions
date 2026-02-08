@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | Jers Web Solutions</title>
+    <title>Portafolio - Jers Web Solutions</title>
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,7 +26,7 @@
     </nav>
 
     <header class="section" style="padding-top: 150px; text-align: center;">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <div class="section-title">
                 <h2>Nuestra <span class="text-gold">Huella Digital</span></h2>
                 <p>Más de 200 proyectos entregados. Aquí una selección de nuestra experiencia.</p>
@@ -36,97 +37,72 @@
     <section class="section" style="padding-top: 0;">
         <div class="container">
             
-            <div class="card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
                 <div style="height: 250px; background: linear-gradient(45deg, #003355, #001f35); display: flex; align-items: center; justify-content: center;">
                     <h2 style="font-size: 3rem; color: rgba(255,255,255,0.8);">AIRCET</h2>
                 </div>
                 <div style="padding: 40px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
-                        <div>
-                            <h3 style="font-size: 2rem; margin-bottom: 10px;">AIRCET Ingeniería</h3>
-                            <span class="badge">Landing Page</span> <span class="badge">Industrial</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">Ver Proyecto</a>
-                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">AIRCET Ingeniería</h3>
+                    <span class="badge">Landing Page</span> <span class="badge">Industrial</span>
                     <p style="margin-top: 20px; color: var(--text-muted);">
-                        Página de aterrizaje corporativa enfocada en la captación de clientes B2B para servicios de climatización. Diseño sobrio, carga instantánea y formularios conectados a CRM.
+                        Página de aterrizaje corporativa enfocada en la captación de clientes B2B para servicios de climatización.
                     </p>
                 </div>
             </div>
 
-            <div class="card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
                 <div style="height: 250px; background: linear-gradient(45deg, #d4af37, #aa8e29); display: flex; align-items: center; justify-content: center;">
                     <h2 style="font-size: 3rem; color: #000;">JD INK</h2>
                 </div>
                 <div style="padding: 40px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
-                        <div>
-                            <h3 style="font-size: 2rem; margin-bottom: 10px;">JD ThreadInk</h3>
-                            <span class="badge">Landing Page</span> <span class="badge">Moda</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">Ver Proyecto</a>
-                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">JD ThreadInk</h3>
+                    <span class="badge">Landing Page</span> <span class="badge">Moda</span>
                     <p style="margin-top: 20px; color: var(--text-muted);">
-                        Landing Page de alto impacto visual para marca de ropa personalizada. Galería de estilos y botón directo a WhatsApp para cotización de diseños únicos.
+                        Landing Page de alto impacto visual para marca de ropa personalizada. Galería de estilos.
                     </p>
                 </div>
             </div>
 
-            <div class="card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
                 <div style="height: 250px; background: #E6D2B5; display: flex; align-items: center; justify-content: center;">
                     <h2 style="font-size: 3rem; color: #5C4033;">BASSICA</h2>
                 </div>
                 <div style="padding: 40px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
-                        <div>
-                            <h3 style="font-size: 2rem; margin-bottom: 10px;">Bassica.co</h3>
-                            <span class="badge">E-Commerce</span> <span class="badge">Joyería</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">Ver Proyecto</a>
-                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Bassica.co</h3>
+                    <span class="badge">E-Commerce</span> <span class="badge">Joyería</span>
                     <p style="margin-top: 20px; color: var(--text-muted);">
-                        Tienda en línea completa para venta de bisutería fina. Carrito de compras, pasarela de pagos Wompi y sistema de gestión de inventarios con más de 500 referencias.
+                        Tienda en línea completa para venta de bisutería fina. Pasarela de pagos Wompi.
                     </p>
                 </div>
             </div>
 
-            <div class="card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
                 <div style="height: 250px; background: #111; display: flex; align-items: center; justify-content: center;">
                     <h2 style="font-size: 3rem; color: #fff; border: 3px solid #fff; padding: 10px 30px;">SAHET</h2>
                 </div>
                 <div style="padding: 40px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
-                        <div>
-                            <h3 style="font-size: 2rem; margin-bottom: 10px;">Sahet.co</h3>
-                            <span class="badge">E-Commerce</span> <span class="badge">Ropa</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">Ver Proyecto</a>
-                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Sahet.co</h3>
+                    <span class="badge">E-Commerce</span> <span class="badge">Ropa</span>
                     <p style="margin-top: 20px; color: var(--text-muted);">
-                        Plataforma de moda urbana moderna. Integración con logística de envíos, sistema de cupones de descuento y remarketing automático.
+                        Plataforma de moda urbana moderna. Integración con logística de envíos.
                     </p>
                 </div>
             </div>
 
-            <div class="card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
                 <div style="height: 250px; background: #4da6ff; display: flex; align-items: center; justify-content: center;">
                     <h2 style="font-size: 3rem; color: #fff;">Carbonato</h2>
                 </div>
                 <div style="padding: 40px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
-                        <div>
-                            <h3 style="font-size: 2rem; margin-bottom: 10px;">Carbonato.co</h3>
-                            <span class="badge">Landing Page</span> <span class="badge">Servicios</span>
-                        </div>
-                        <a href="#" class="btn btn-outline">Ver Proyecto</a>
-                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Carbonato.co</h3>
+                    <span class="badge">Landing Page</span> <span class="badge">Servicios</span>
                     <p style="margin-top: 20px; color: var(--text-muted);">
-                        Página de servicios de lavandería a domicilio. Sistema de agendamiento de recolección y calculadora de precios en tiempo real.
+                        Página de servicios de lavandería a domicilio. Sistema de agendamiento.
                     </p>
                 </div>
             </div>
 
-            <div style="text-align: center; padding: 40px;">
+            <div style="text-align: center; padding: 40px;" data-aos="fade-up">
                 <p style="color: #666; margin-bottom: 20px;">... y muchos más proyectos confidenciales bajo NDA.</p>
                 <a href="contacto.html" class="btn btn-primary">Iniciar Mi Proyecto</a>
             </div>
@@ -134,28 +110,12 @@
         </div>
     </section>
 
-    <div class="floating-container">
-        <a href="https://wa.me/573102948255?text=Hola%20Jers,%20quisiera%20cotizar%20un%20proyecto." target="_blank" class="float-element">
-            <i class="fab fa-whatsapp"></i>
-            <span class="float-tooltip">WhatsApp</span>
-        </a>
-        
-        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element">
-            <i class="fab fa-instagram"></i>
-            <span class="float-tooltip">Instagram</span>
-        </a>
-
-        <div class="float-main">
-            <i class="fas fa-comments"></i>
-        </div>
-    </div>
-
     <footer class="footer-big">
         <div class="container">
             <div class="footer-grid-4">
                 <div class="footer-col">
                     <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
-                    <p style="color: #888; font-size: 0.9rem; line-height: 1.6;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
+                    <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navegación</h4>
@@ -169,25 +129,30 @@
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Política de Privacidad</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Soporte</a></li>
+                        <li><a href="legal.html">Política de Privacidad</a></li>
+                        <li><a href="legal.html">Términos y Condiciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
                         <li><i class="fas fa-phone-alt"></i> +57 310 294 8255</li>
                         <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2026 Jers Web Solutions. Todos los derechos reservados.</div>
+            <div class="footer-bottom">&copy; 2015 - 2026 Jers Web Solutions. Todos los derechos reservados.</div>
         </div>
     </footer>
 
+    <div class="floating-container">
+        <a href="https://wa.me/573102948255" target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
+        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element"><i class="fab fa-instagram"></i><span class="float-tooltip">Instagram</span></a>
+        <div class="float-main"><i class="fas fa-comments"></i></div>
+    </div>
 
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true, offset: 100 });</script>
+
 </body>
 </html>
