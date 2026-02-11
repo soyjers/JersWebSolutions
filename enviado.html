@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Recibido | Jers Web Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        }
+        .icon-box {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.1); /* Verde suave */
+            color: #25D366; /* Verde WhatsApp/Éxito */
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            border: 2px solid rgba(37, 211, 102, 0.3);
+            animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        h1 { margin-bottom: 15px; font-size: 2.5rem; }
+        p { max-width: 500px; color: var(--text-muted); margin-bottom: 40px; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="success-page">
+        <div class="icon-box">
+            <i class="fas fa-check"></i>
+        </div>
+        
+        <h1 class="text-gold">¡Mensaje Recibido!</h1>
+        
+        <p>Gracias por contactar a <strong>Jers Web Solutions</strong>. Hemos recibido tu solicitud correctamente. Te responderemos en menos de 24 horas.</p>
+        
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <a href="index.html" class="btn btn-primary">Volver al Inicio</a>
+            <a href="portafolio.html" class="btn btn-outline">Ver Proyectos</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura Electrónica | Jers Web Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <style>
+        /* --- 1. RESET & BASE --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: #111; /* Fondo de la app oscuro */
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        /* --- 2. LA HOJA A4 (EL LIENZO) --- */
+        #invoiceElement {
+            width: 210mm;
+            min-height: 297mm; /* A4 Standard */
+            background-color: #fff;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            overflow: hidden; /* Corta la marca de agua si se sale */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* MARCA DE AGUA (LOGO GIGANTE) */
+        .watermark {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+            opacity: 0.03; /* Muy sutil para no molestar la lectura */
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* --- 3. HEADER PREMIUM (NEGRO Y DORADO) --- */
+        .inv-header {
+            background-color: #080808; /* Negro profundo */
+            color: #fff;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #d4af37; /* Línea dorada de lujo */
+            position: relative;
+            z-index: 2;
+            -webkit-print-color-adjust: exact; /* Fuerza la impresión del fondo negro */
+        }
+
+        .logo-area img { 
+            height: 70px; /* Logo grande */
+            display: block;
+            margin-bottom: 10px;
+        }
+        .logo-area p {
+            font-size: 0.75rem;
+            color: #ccc;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .invoice-meta { text-align: right; }
+        .invoice-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+        .invoice-number {
+            font-size: 1.2rem;
+            color: #d4af37; /* Dorado */
+            font-weight: 700;
+            display: block;
+        }
+
+        /* --- 4. CONTENIDO PRINCIPAL --- */
+        .inv-body {
+            padding: 50px;
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Grid de Información (Cliente/Proveedor) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .info-card h3 {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 2px;
+        }
+        .info-card strong { color: #000; font-weight: 700; font-size: 1.1rem; }
+
+        /* Detalles de Fechas (Barra Gris) */
+        .date-bar {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            border-left: 4px solid #d4af37;
+        }
+        .date-item span { display: block; font-size: 0.75rem; color: #777; text-transform: uppercase; }
+        .date-item strong { display: block; font-size: 1rem; color: #000; font-weight: 700; }
+
+        /* --- 5. TABLA DE SERVICIOS --- */
+        .table-container { margin-bottom: 40px; }
+        .inv-table { width: 100%; border-collapse: collapse; }
+        
+        .inv-table th {
+            text-align: left;
+            padding: 15px 10px;
+            border-bottom: 2px solid #000;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #000;
+        }
+        
+        .inv-table td {
+            padding: 20px 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+            color: #333;
+            vertical-align: top;
+        }
+        
+        /* Columnas */
+        .col-desc { width: 50%; }
+        .col-qty { width: 10%; text-align: center; }
+        .col-price { width: 20%; text-align: right; }
+        .col-total { width: 20%; text-align: right; font-weight: 700; color: #000; }
+
+        .item-title { display: block; font-weight: 700; color: #000; font-size: 1rem; margin-bottom: 4px; }
+        .item-sub { display: block; font-size: 0.85rem; color: #666; font-style: italic; }
+
+        /* --- 6. TOTALES Y PAGOS --- */
+        .bottom-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        /* Métodos de Pago */
+        .payment-info { width: 50%; }
+        .payment-info h4 { font-family: 'Outfit', sans-serif; font-size: 1rem; color: #000; margin-bottom: 15px; }
+        .bank-item { margin-bottom: 12px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+        .bank-item i { color: #d4af37; width: 20px; text-align: center; }
+        .bank-item span { color: #555; }
+        .bank-item strong { color: #000; font-weight: 600; margin-left: 5px; }
+
+        /* Caja de Totales */
+        .totals-box { width: 40%; }
+        .t-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.95rem; color: #555; }
+        
+        /* El GRAN TOTAL */
+        .t-total {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            -webkit-print-color-adjust: exact;
+        }
+        .t-total span:first-child { font-size: 1rem; text-transform: uppercase; font-weight: 600; }
+        .t-total span:last-child { font-size: 1.8rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: #d4af37; }
+
+        /* --- 7. FOOTER LEGAL --- */
+        .inv-footer {
+            margin-top: auto; /* Empuja al fondo */
+            padding: 30px 50px;
+            background: #fcfcfc;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        /* --- BOTONES DE ACCIÓN (FLOTANTES) --- */
+        .action-bar {
+            position: fixed; bottom: 30px;
+            background: #222; padding: 12px 30px; border-radius: 50px;
+            display: flex; gap: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            z-index: 100; border: 1px solid #444;
+        }
+        .action-btn {
+            color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 600;
+            display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.3s;
+        }
+        .action-btn:hover { color: #d4af37; }
+        .sep { width: 1px; height: 20px; background: #555; }
+
+    </style>
+</head>
+<body>
+
+    <div class="action-bar" data-html2canvas-ignore="true">
+        <div class="action-btn" onclick="generatePDF()"><i class="fas fa-download"></i> Descargar PDF</div>
+        <div class="sep"></div>
+        <a href="index.html" class="action-btn"><i class="fas fa-home"></i> Inicio</a>
+    </div>
+
+    <div id="invoiceElement">
+        
+        <img src="img/logo/logo.svg" class="watermark" alt="Watermark">
+
+        <div class="inv-header">
+            <div class="logo-area">
+                <img src="img/logo/logo.svg" alt="Jers Web Solutions">
+                <p>Agencia de Desarrollo & Marketing</p>
+            </div>
+            <div class="invoice-meta">
+                <h1 class="invoice-title">FACTURA</h1>
+                <span class="invoice-number">#JWS-001</span>
+            </div>
+        </div>
+
+        <div class="inv-body">
+            
+            <div class="date-bar">
+                <div class="date-item">
+                    <span>Fecha de Emisión</span>
+                    <strong>08 de Febrero, 2026</strong>
+                </div>
+                <div class="date-item">
+                    <span>Fecha de Vencimiento</span>
+                    <strong style="color: #e74c3c;">23 de Febrero, 2026</strong>
+                </div>
+                <div class="date-item">
+                    <span>Estado</span>
+                    <strong style="color: #d4af37;">PENDIENTE</strong>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>De (Proveedor)</h3>
+                    <p><strong>Jers Web Solutions</strong></p>
+                    <p>NIT: 123.456.789-0</p>
+                    <p>Calle 100 #15-20, Oficina 401</p>
+                    <p>Bogotá D.C., Colombia</p>
+                    <p>contacto@jerswebsolutions.digital</p>
+                </div>
+                <div class="info-card">
+                    <h3>Para (Cliente)</h3>
+                    <p><strong>AIRCET Ingeniería S.A.S.</strong></p>
+                    <p>NIT: 900.555.444-1</p>
+                    <p>Av. El Dorado #68-15, Torre 2</p>
+                    <p>Bogotá D.C., Colombia</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="inv-table">
+                    <thead>
+                        <tr>
+                            <th class="col-desc">Descripción</th>
+                            <th class="col-qty">Cant.</th>
+                            <th class="col-price">Precio Unit.</th>
+                            <th class="col-total">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="item-title">Desarrollo Web Corporativo</span>
+                                <span class="item-sub">Landing Page Premium, Optimización SEO, Integración WhatsApp.</span>
+                            </td>
+                            <td class="col-qty">1</td>
+                            <td class="col-price">$1,500,000</td>
+                            <td class="col-total">$1,500,000</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="item-title">Hosting VPS & Dominio .COM</span>
+                                <span class="item-sub">Servidor de alta velocidad (1 Año) + Certificado SSL.</span>
+                            </td>
+                            <td class="col-qty">1</td>
+                            <td class="col-price">$250,000</td>
+                            <td class="col-total">$250,000</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="item-title">Mantenimiento Mensual</span>
+                                <span class="item-sub">Soporte técnico prioritario y backups (Mes 1).</span>
+                            </td>
+                            <td class="col-qty">3</td>
+                            <td class="col-price">$100,000</td>
+                            <td class="col-total">$200,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="bottom-section">
+                
+                <div class="payment-info">
+                    <h4>Información de Pago</h4>
+                    <div class="bank-item">
+                        <i class="fas fa-university"></i>
+                        <span>Bancolombia Ahorros: <strong>032-123456-78</strong></span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Nequi: <strong>310 294 8255</strong></span>
+                    </div>
+                    <div class="bank-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>DollarApp: <strong>$jerswebsolutions</strong></span>
+                    </div>
+                </div>
+
+                <div class="totals-box">
+                    <div class="t-row">
+                        <span>Subtotal</span>
+                        <span>$1,850,000</span>
+                    </div>
+                    <div class="t-row">
+                        <span>Descuento</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="t-total">
+                        <span>Total a Pagar</span>
+                        <span>$1,850,000</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="inv-footer">
+            <p>Esta factura se asimila en todos sus efectos a una Letra de Cambio según el Art. 774 del Código de Comercio.</p>
+            <p>Gracias por confiar en la calidad de Jers Web Solutions.</p>
+        </div>
+
+    </div>
+
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('invoiceElement');
+            const opt = {
+                margin: 0,
+                filename: 'Factura_JWS_001.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+
+</body>
+</html>

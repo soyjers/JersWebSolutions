@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Juan Esteban Ruiz | Full Stack Dev</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* PALETA DE COLORES "FINTECH & DEV" */
+            --sidebar-bg: #0f172a;     /* Azul oscuro casi negro (Elegante) */
+            --accent: #3b82f6;         /* Azul Mercado Pago/Tech (Vibrante) */
+            --accent-soft: #dbeafe;    /* Azul muy suave para fondos */
+            --text-dark: #1e293b;      /* Texto principal */
+            --text-gray: #64748b;      /* Texto secundario */
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            background-color: #555; 
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* --- CONFIGURACIÓN DE PÁGINA A4 --- */
+        @page {
+            size: A4;
+            margin: 0mm;
+        }
+
+        .cv-container {
+            width: 210mm;
+            height: 297mm; /* Altura fija A4 */
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 32% 68%; /* Proporción Sidebar/Contenido */
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            overflow: hidden; 
+        }
+
+        /* --- SIDEBAR (IZQUIERDA) --- */
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            color: var(--white);
+            padding: 35px 25px; /* Espaciado interno */
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Espacio entre secciones */
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .profile-img {
+            width: 160px; /* AUMENTADO: Tamaño ideal para imponer presencia */
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+
+        h3.side-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        /* Contacto */
+        ul.contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        ul.contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+        }
+        ul.contact-list i { color: var(--accent); width: 16px; text-align: center; }
+        ul.contact-list a { color: #e2e8f0; text-decoration: none; transition: color 0.2s; }
+        ul.contact-list a:hover { color: var(--accent); }
+
+        /* Etiquetas de Skills */
+        .tags-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            background: rgba(59, 130, 246, 0.15); /* Fondo azul transparente */
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: #eff6ff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Skills Profesionales (Lista) */
+        ul.soft-skills {
+            list-style: none;
+            padding-left: 5px;
+        }
+        ul.soft-skills li {
+            margin-bottom: 6px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        ul.soft-skills li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 10px;
+        }
+
+        /* Educación */
+        .edu-item { margin-bottom: 15px; }
+        .edu-school { font-weight: 700; font-size: 13px; color: white; display: block; }
+        .edu-detail { font-size: 12px; color: #cbd5e1; display: block; }
+        .edu-date { font-size: 11px; color: var(--accent); font-style: italic; }
+
+        /* --- CONTENIDO PRINCIPAL (DERECHA) --- */
+        .main-content {
+            padding: 40px 35px;
+            background-color: var(--white);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent-soft);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 34px; /* Grande y legible */
+            color: var(--sidebar-bg);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        h2.subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        p.summary {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        /* Sección Experiencia */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        .section-heading i {
+            color: var(--accent);
+            font-size: 18px;
+            background: var(--accent-soft);
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .section-heading h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            color: var(--sidebar-bg);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--accent-soft);
+            margin-bottom: 22px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .job-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--sidebar-bg);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .job-company {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        ul.job-tasks { margin-left: 15px; }
+        ul.job-tasks li {
+            font-size: 12px;
+            color: #4b5563;
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+
+        /* Botón Flotante */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2563eb;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            cursor: pointer;
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .cv-container { box-shadow: none; margin: 0; }
+            .print-btn { display: none; }
+        }
+        
+        @media (max-width: 768px) {
+            .cv-container { grid-template-columns: 1fr; height: auto; }
+            .sidebar { padding: 20px; text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> DESCARGAR PDF
+    </button>
+
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="profile-container">
+                <img src="img/FotoCV.png" alt="Juan Esteban Ruiz" class="profile-img">
+            </div>
+
+            <div>
+                <h3 class="side-title">Contacto</h3>
+                <ul class="contact-list">
+                    <li><i class="fas fa-location-dot"></i> Bogotá, Colombia</li>
+                    <li><i class="fas fa-phone"></i> (+57) 310 294 8255</li>
+                    <li><i class="fas fa-envelope"></i> jersdevops@gmail.com</li>
+                    <li><a href="https://linkedin.com/in/soyjers" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/soyjers</a></li>
+                    <li><a href="https://github.com/soyjers" target="_blank"><i class="fab fa-github"></i> github.com/soyjers</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="side-title">Stack Técnico</h3>
+                <div class="tags-group">
+                    <span class="tag">JavaScript (ES6+)</span>
+                    <span class="tag">React.js / Redux</span>
+                    <span class="tag">Node.js / Express</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">HTML5 / CSS3</span>
+                    <span class="tag">Git / GitHub Actions</span>
+                    <span class="tag">AWS (S3/EC2)</span>
+                    <span class="tag">REST APIs</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="side-title">Habilidades Profesionales</h3>
+                <ul class="soft-skills">
+                    <li>Metodologías Ágiles (Scrum)</li>
+                    <li>Resolución de Conflictos</li>
+                    <li>Gestión de Tiempo y Prioridades</li>
+                    <li>Comunicación Asertiva</li>
+                    <li>Atención al Detalle (QA Mindset)</li>
+                    <li>Adaptabilidad y Aprendizaje Rápido</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="side-title">Educación</h3>
+                <div class="edu-item">
+                    <span class="edu-school">Tripleten Bootcamp</span>
+                    <span class="edu-detail">QA Engineer & UX/UI Design</span>
+                    <span class="edu-date">2025 - Presente</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-school">BIT Institute</span>
+                    <span class="edu-detail">Programador Full Stack</span>
+                    <span class="edu-date">2024</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-school">El Toro High School (USA)</span>
+                    <span class="edu-detail">Diploma High School</span>
+                    <span class="edu-date">Graduado 2022</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Juan Esteban Ruiz</h1>
+                <h2 class="subtitle">Full Stack Developer | Fintech Operations Specialist</h2>
+                <p class="summary">
+                    Desarrollador Web bilingüe y Especialista en Operaciones Fintech con <strong>5 años de experiencia técnica</strong>. Mi perfil híbrido combina el dominio del Stack MERN (MongoDB, Express, React, Node) con una sólida trayectoria en soporte crítico para plataformas financieras (Mercado Pago). Me especializo en crear y mantener soluciones digitales que sean seguras, eficientes y centradas en el usuario, garantizando tanto la calidad del código como la excelencia en la experiencia del cliente.
+                </p>
+            </header>
+
+            <div class="section-heading">
+                <i class="fas fa-briefcase"></i>
+                <h3>Experiencia Profesional</h3>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Analista de Soporte Fintech & Riesgos</div>
+                <div class="job-company">
+                    <span>Concentrix (Campaña Mercado Pago)</span>
+                    <span>Jun 2025 – Presente</span>
+                </div>
+                <ul class="job-tasks">
+                    <li>Gestión operativa de líneas de crédito y tarjetas corporativas, asegurando el cumplimiento de normativas de seguridad financiera.</li>
+                    <li>Análisis y resolución de disputas transaccionales y bloqueos preventivos, utilizando herramientas internas de monitoreo de fraude.</li>
+                    <li>Identificación de patrones de error en la plataforma (bugs) y reporte técnico a los equipos de desarrollo para mejora continua del producto.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Fundador & Lead Developer</div>
+                <div class="job-company">
+                    <span>Jers Web Solutions (Freelance Internacional)</span>
+                    <span>2023 – Presente</span>
+                </div>
+                <ul class="job-tasks">
+                    <li><strong>Cliente JD ThreadInk (California, USA):</strong> Desarrollo Full Stack de e-commerce, integración de pagos, gestión de inventario y soporte técnico mensual (SLA 99.9%).</li>
+                    <li><strong>Cliente AIRCET (Colombia):</strong> Branding corporativo y desarrollo web optimizado para SEO, aumentando la visibilidad digital de la marca.</li>
+                    <li>Gestión completa del proyecto: Desde el diseño UI en Figma hasta el despliegue en servidores y configuración de dominios/DNS.</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Coordinador de Experiencia al Cliente (CX)</div>
+                <div class="job-company">
+                    <span>Carbonato Laundry</span>
+                    <span>Ene 2021 – Dic 2022</span>
+                </div>
+                <ul class="job-tasks">
+                    <li>Implementación de estrategias digitales para la atención al cliente, mejorando los tiempos de respuesta y la fidelización.</li>
+                    <li>Soporte y actualización de contenidos en la plataforma web de la empresa, asegurando la correcta visualización de servicios.</li>
+                    <li>Gestión de incidencias y PQR, desarrollando habilidades clave en resolución de problemas bajo presión.</li>
+                </ul>
+            </div>
+
+            <div class="section-heading">
+                <i class="fas fa-language"></i>
+                <h3>Idiomas</h3>
+            </div>
+            <div style="font-size: 13px; color: #4b5563; padding-left: 20px;">
+                <p><strong>Español:</strong> Nativo &nbsp;|&nbsp; <strong>Inglés:</strong> B2 Avanzado (Conversacional fluido, Educación en California)</p>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

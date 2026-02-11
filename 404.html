@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Ruta Extraviada | Jers Web Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Texto gigante de fondo */
+        .big-404 {
+            font-size: 20vw; /* Gigante responsivo */
+            font-weight: 900;
+            line-height: 0.8;
+            opacity: 0.03; /* Muy sutil */
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            color: #fff;
+        }
+        .content-404 { position: relative; z-index: 1; padding: 0 20px; }
+        .content-404 h2 { font-size: 3rem; margin-bottom: 20px; color: #fff; }
+        .content-404 p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+
+    <div class="error-page">
+        <div class="big-404">404</div>
+        
+        <div class="content-404">
+            <div style="font-size: 4rem; color: var(--gold-solid); margin-bottom: 20px;">
+                <i class="fas fa-compass"></i>
+            </div>
+            <h2>Ruta Extraviada</h2>
+            <p>Parece que la página que buscas no existe o ha sido movida a otro servidor.</p>
+            
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i> Regresar a la Base
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
