@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=29.0">
+    <link rel="stylesheet" href="css/style.css?v=50.0">
 </head>
 <body>
 
@@ -217,12 +217,11 @@
                     <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;" alt="Logo Footer">
                     <p style="color: #888;" data-i18n="footer_txt">Agencia especializada en Diseño de Landing Pages.</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-col">
                     <h4 data-i18n="footer_nav_title">Navegación</h4>
-                    <ul>
+                    <ul class="footer-links">
                         <li><a href="/" data-i18n="nav_home">Inicio</a></li>
                         <li><a href="CasosDeExito" data-i18n="nav_cases">Casos de Éxito</a></li>
-                        <li><a href="https://wa.me/573102948255?text=Hola" target="_blank" data-i18n="nav_contact">Contacto Directo</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -236,7 +235,12 @@
                     <h4 data-i18n="footer_contact_title">Contacto Directo</h4>
                     <ul class="footer-contact">
                         <li><a href="https://wa.me/573102948255" target="_blank" style="color:var(--gold-text); font-weight:bold;"><i class="fab fa-whatsapp"></i> +57 310 294 8255</a></li>
-                        <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
+                        <li>
+                            <i class="fas fa-envelope"></i> 
+                            <a href="mailto:contacto@jerswebsolutions.digital?subject=Consulta%20sobre%20Landing%20Page" class="footer-link-email">
+                                contacto@jerswebsolutions.digital
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -259,22 +263,27 @@
     <script>
         AOS.init();
         function setLang(lang) {
-            fetch(`lang/${lang}.json`).then(res => res.json()).then(data => {
-                document.querySelectorAll('[data-i18n]').forEach(el => {
-                    const key = el.getAttribute('data-i18n');
-                    if (data[key]) {
-                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                            el.placeholder = data[key];
-                        } else {
-                            el.innerHTML = data[key];
+            fetch(`lang/${lang}.json`)
+                .then(res => res.json())
+                .then(data => {
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (data[key]) {
+                            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                                el.placeholder = data[key];
+                            } else {
+                                el.innerHTML = data[key];
+                            }
                         }
-                    }
-                });
-            });
+                    });
+                })
+                .catch(err => console.error("Error cargando el idioma:", err));
+
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             const activeBtn = document.getElementById(`btn-${lang}`);
             if (activeBtn) activeBtn.classList.add('active');
         }
+
         document.addEventListener('DOMContentLoaded', () => {
             setLang('es');
             const hamburger = document.querySelector('.hamburger');

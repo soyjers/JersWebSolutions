@@ -2,17 +2,14 @@
     "nav_home": "Inicio",
     "nav_cases": "Casos de Éxito",
     "nav_contact": "Contacto Directo",
-    
     "hero_badge": "🏆 Expertos en Landing Pages | Colombia 🇨🇴 & USA 🇺🇸",
     "hero_title": "¿Sin presencia digital?<br>Creamos tu <span class='text-gold'>Landing Page Profesional</span>.",
     "hero_desc": "No necesitas un sitio web gigante. Necesitas una Landing Page estratégica diseñada para vender tus servicios y captar clientes en automático.",
     "hero_btn_primary": "Cotizar Landing Page",
     "hero_btn_secondary": "Ver Ejemplos",
-    
     "stats_exp": "Años de Experiencia",
     "stats_projects": "Landings Creadas",
     "stats_roi": "Clientes Felices",
-    
     "problem_title": "Sin Landing Page,<br><span class='text-gold'>Estás Perdiendo Ventas</span>",
     "problem_desc": "La publicidad en redes sociales necesita un destino. Si mandas tráfico a tu perfil, pierdes dinero. Necesitas una Landing Page que convierta.",
     "card_1_title": "Diseño de Alta Conversión",
@@ -21,14 +18,11 @@
     "card_2_desc": "Botones estratégicos, textos persuasivos y velocidad de carga ultra rápida.",
     "card_3_title": "Todo Incluido",
     "card_3_desc": "Dominio, Hosting, Certificado SSL y versión móvil perfecta. Nosotros nos encargamos de todo.",
-    
     "cta_mid_title": "Tu competencia ya tiene una Landing Page. ¿Y tú?",
     "cta_mid_btn": "Quiero mi Landing Page",
-    
     "cases_title": "Proyectos <span class='text-gold'>Recientes</span>",
     "cases_desc": "Empresas reales que digitalizamos con éxito.",
     "case_btn": "Ver Proyecto",
-    
     "test_title": "Nuestros Clientes <span class='text-gold'>Opinan</span>",
     "test_1_text": "\"Jers Web Solutions entendió perfectamente nuestra necesidad corporativa. La Landing Page es técnica, limpia y genera la confianza que nuestros clientes B2B exigen.\"",
     "test_1_role": "Gerente General - AIRCET",
@@ -36,11 +30,9 @@
     "test_2_role": "Fundador - JD ThreadInk",
     "test_3_text": "\"Soporte 10/10. La automatización de pedidos vía WhatsApp nos ahorra horas de trabajo manual cada día. Es la mejor inversión que hemos hecho.\"",
     "test_3_role": "Directora Operaciones - Carbonato",
-    
     "final_cta_title": "¿Tu Empresa Aquí?",
     "final_cta_desc": "¿Quieres que tu proyecto también sea un caso de éxito? No pierdas el tiempo.",
     "final_cta_btn": "Contactar por WhatsApp",
-    
     "footer_txt": "Agencia especializada en Diseño de Landing Pages y Embudos de Venta.",
     "footer_nav_title": "Navegación",
     "footer_legal_title": "Legal",
@@ -48,22 +40,22 @@
     "footer_terms": "Términos y Condiciones",
     "footer_contact_title": "Contacto Directo",
     "footer_rights": "Todos los derechos reservados.",
-
-    "cases_page_badge": "Resultados Reales",
-    "cases_page_title": "Landing Pages que <span class='text-gold'>Facturan</span>",
-    "cases_page_desc": "Ejemplos reales de clientes que han transformado su negocio con nuestras landings.",
+    "cases_page_badge": "Trayectoria Real",
+    "cases_page_title": "Resultados que <span class='text-gold'>Hablan por Sí Solos</span>",
+    "cases_page_desc": "Transformamos la identidad digital de empresas que buscan eficiencia y ventas.",
     "case_aircet_desc": "Landing Page para Ingeniería Industrial y Climatización. Optimizada para generar confianza en clientes corporativos (B2B).",
-    "case_aircet_stat": "📈 +40% en Solicitudes de Cotización",
+    "case_aircet_stat": "📈 +40% en Solicitudes",
     "case_jd_desc": "Landing Page para Textil y Bordados. Catálogo visual de alto impacto para mostrar la calidad de las prendas.",
     "case_jd_stat": "🚀 Posicionamiento de Marca Top",
     "case_carbonato_desc": "Landing Page para Lavandería a Domicilio. Sistema rápido de pedidos enfocado en la comodidad del usuario.",
     "case_carbonato_stat": "⚡ Automatización de Pedidos vía WhatsApp",
     "btn_view_landing": "Ver Landing Page",
     "btn_want_same": "Quiero mi página web ya",
-    "cases_more_title": "Trayectoria Comprobada",
-    "cases_more_desc": "*Estos son solo 3 ejemplos de los más de 200 proyectos exitosos que hemos desarrollado. Por confidencialidad con nuestros clientes premium, mostramos solo una selección autorizada.",
-    "btn_start_project": "Empezar mi Proyecto Ahora",
-
+    "cases_more_title": "Experiencia Comprobada",
+    "cases_more_desc": "*Estos son solo 3 ejemplos destacados de los más de 200 proyectos exitosos que hemos desarrollado. Por políticas de confidencialidad con nuestros clientes corporativos y contratos de exclusividad, la mayoría de nuestro portafolio se mantiene en reserva privada.",
+    "btn_start_project": "Empezar mi Transformación Ahora",
+    "final_cta_title_cases": "¿Quieres resultados como estos?",
+    "final_cta_desc_cases": "Tu empresa merece una vitrina digital de alto nivel. Hablemos hoy mismo.",
     "faq_title": "Preguntas <span class='text-gold'>Frecuentes</span>",
     "faq_1_q": "¿Cuánto tiempo tardan en entregar?",
     "faq_1_a": "Dependiendo de la complejidad, entregamos tu Landing Page lista entre 5 y 10 días hábiles.",
@@ -73,7 +65,6 @@
     "faq_3_a": "Totalmente. Te damos acceso para que puedas actualizar textos o imágenes cuando quieras.",
     "faq_4_q": "¿Hacen webs para el exterior?",
     "faq_4_a": "Sí, trabajamos con clientes en Colombia, USA y Europa. Adaptamos la web a tu mercado.",
-
     "tc_title": "Términos y <span class='text-gold'>Condiciones</span>",
     "tc_intro": "Bienvenido a Jers Web Solutions. Al contratar nuestros servicios, el Cliente acepta incondicionalmente los siguientes términos y condiciones de servicio:",
     "tc_1_title": "1. Alcance del Servicio",
@@ -91,7 +82,6 @@
     "tc_7_title": "7. Pagos Recurrentes",
     "tc_7_text": "Los servicios de Hosting y Dominio son anuales. Es responsabilidad del Cliente realizar la renovación anual para evitar la caída del servicio.",
     "tc_btn_back": "Volver al Inicio",
-
     "pp_title": "Política de <span class='text-gold'>Privacidad</span>",
     "pp_intro": "En Jers Web Solutions, respetamos tu privacidad y estamos comprometidos a proteger tus datos personales. A continuación describimos cómo gestionamos tu información:",
     "pp_1_title": "1. Recopilación de Datos",
@@ -105,7 +95,5 @@
     "pp_5_title": "5. Cambios en la Política",
     "pp_5_text": "Nos reservamos el derecho de actualizar esta política de privacidad. Cualquier cambio será publicado en esta página.",
     "pp_btn_back": "Volver al Inicio",
-
-    
-        "wtsp_tooltip": "¿Tienes dudas? Escríbenos y te asesoramos gratis. 🚀"
+    "wtsp_tooltip": "¿Tienes dudas? Escríbenos y te asesoramos gratis. 🚀"
 }
