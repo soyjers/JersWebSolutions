@@ -1,0 +1,38 @@
+{
+    "nav_home": "Inicio",
+    "nav_expertise": "Expertise",
+    "nav_process": "Consultoría",
+    "nav_cta": "Solicitar Auditoría",
+    
+    "hero_badge": "🏆 Jers Web Solutions: Expertos en Conversión",
+    "hero_title": "No diseñamos webs.<br>Construimos <span class='text-gold'>Máquinas de Ventas</span>.",
+    "hero_desc": "Soy especialista en Landing Pages de Alta Conversión. Si estás invirtiendo en publicidad y no vendes, el problema es tu web. Déjame auditar tu estrategia y escalar tu facturación.",
+    "hero_btn_primary": "Hablar con el Experto",
+    "hero_btn_secondary": "Ver Casos de Éxito",
+    
+    "stats_exp": "Años Optimizando Embudos",
+    "stats_projects": "Landing Pages Rentables",
+    "stats_roi": "Clientes Satisfechos",
+    
+    "problem_title": "¿Tu Tráfico se <span class='text-gold'>Desperdicia</span>?",
+    "problem_desc": "La mayoría de agencias hacen webs 'bonitas'. Yo hago webs que funcionan. Mi enfoque es técnico y psicológico.",
+    "card_1_title": "Arquitectura Persuasiva",
+    "card_1_desc": "Diseño cada sección con neuroventas para guiar al usuario hacia la compra sin fricción.",
+    "card_2_title": "Consultoría Estratégica",
+    "card_2_desc": "No solo te entrego código. Te asesoro sobre cómo estructurar tu oferta para que sea irresistible.",
+    "card_3_title": "Velocidad de Carga",
+    "card_3_desc": "Optimizamos cada línea de código. Una web lenta mata ventas. Las mías vuelan.",
+    
+    "cta_mid_title": "Deja de improvisar. Empieza a convertir.",
+    "cta_mid_btn": "Quiero una Landing que Venda",
+    
+    "cases_title": "Resultados <span class='text-gold'>Reales</span>",
+    "cases_desc": "Empresas que confiaron en mi consultoría y hoy lideran su nicho.",
+    "case_btn": "Analizar este Caso",
+    
+    "final_cta_title": "¿Listo para escalar tu negocio?",
+    "final_cta_desc": "Solo trabajo con marcas comprometidas con su crecimiento. Si eres tú, hablemos.",
+    "final_cta_btn": "Agendar Consultoría 1 a 1",
+    
+    "footer_txt": "Especialista en Desarrollo Web y Estrategias de Conversión."
+}

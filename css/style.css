@@ -99,7 +99,17 @@ img { max-width: 100%; display: block; }
     z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
-.logo-img { height: 60px; width: auto; display: block; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); transition: transform 0.3s ease; }
+
+/* LOGO: Fix para renderizado nítido en iOS */
+.logo-img { 
+    height: 60px; 
+    width: auto; 
+    display: block; 
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); 
+    transition: transform 0.3s ease;
+    -webkit-backface-visibility: hidden; /* Fix parpadeo */
+    transform: translateZ(0); /* Aceleración hardware */
+}
 .logo-img:hover { transform: scale(1.05); }
 
 .nav-links { display: flex; gap: 30px; align-items: center; }
@@ -145,9 +155,18 @@ img { max-width: 100%; display: block; }
 .stat-item h3 { font-size: 3rem; color: #fff; margin-bottom: 5px; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .stat-item p { color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
 
-/* Tech Stack */
+/* Tech Stack - FIX COLOR OPACO EN IPHONE */
 .tech-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 40px; }
-.tech-item { font-size: 2.5rem; color: #333; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100px; }
+.tech-item { 
+    font-size: 2.5rem; 
+    color: #ffffff; /* <--- CAMBIADO DE #333 A #FFFFFF PARA QUE SE VEA BIEN EN NEGRO */
+    transition: 0.3s; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    width: 100px; 
+}
 .tech-item span { font-size: 0.8rem; opacity: 0; transition: 0.3s; color: var(--gold-text); }
 .tech-item:hover { color: var(--gold-text); transform: translateY(-5px); }
 .tech-item:hover span { opacity: 1; }

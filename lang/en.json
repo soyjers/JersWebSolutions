@@ -1,0 +1,38 @@
+{
+    "nav_home": "Home",
+    "nav_expertise": "Expertise",
+    "nav_process": "Consulting",
+    "nav_cta": "Request Audit",
+    
+    "hero_badge": "🏆 Jers Web Solutions: Conversion Experts",
+    "hero_title": "We don't build sites.<br>We build <span class='text-gold'>Revenue Engines</span>.",
+    "hero_desc": "I specialize in High-Converting Landing Pages. If you are spending on ads but not selling, your site is the problem. Let me audit your strategy and scale your revenue.",
+    "hero_btn_primary": "Talk to the Expert",
+    "hero_btn_secondary": "View Case Studies",
+    
+    "stats_exp": "Years Optimizing Funnels",
+    "stats_projects": "Profitable Landings",
+    "stats_roi": "Satisfied Clients",
+    
+    "problem_title": "Is Your Traffic <span class='text-gold'>Wasted</span>?",
+    "problem_desc": "Most agencies build 'pretty' sites. I build sites that work. My approach is technical and psychological.",
+    "card_1_title": "Persuasive Architecture",
+    "card_1_desc": "I design every section with neuro-sales to guide the user towards purchase friction-free.",
+    "card_2_title": "Strategic Consulting",
+    "card_2_desc": "I don't just deliver code. I advise you on how to structure your offer to make it irresistible.",
+    "card_3_title": "Load Speed",
+    "card_3_desc": "We optimize every line of code. A slow site kills sales. Mine fly.",
+    
+    "cta_mid_title": "Stop guessing. Start converting.",
+    "cta_mid_btn": "I Want a Sales Landing Page",
+    
+    "cases_title": "Proven <span class='text-gold'>Results</span>",
+    "cases_desc": "Brands that trusted my consulting and now lead their niche.",
+    "case_btn": "Analyze Case",
+    
+    "final_cta_title": "Ready to scale your business?",
+    "final_cta_desc": "I only work with brands committed to growth. If that's you, let's talk.",
+    "final_cta_btn": "Book 1:1 Consulting",
+    
+    "footer_txt": "Specialist in Web Development and Conversion Strategies."
+}

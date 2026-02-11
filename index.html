@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jers Web Solutions | Agencia Premium</title>
+    <title>Jers Web Solutions | Experto en Landing Pages</title>
     
-    <meta name="description" content="Agencia de Desarrollo Web y Marketing Digital en Colombia. Creamos sitios web premium, tiendas online y estrategias digitales para potenciar tu marca.">
-    <meta property="og:title" content="Jers Web Solutions">
+    <meta name="description" content="Consultoría experta en Landing Pages. Aumenta tus ventas y conversiones con un diseño estratégico enfocado en resultados.">
+    <meta property="og:title" content="Jers Web Solutions - Expertos en Conversión">
     <meta property="og:image" content="img/logo/logo.svg">
     
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
@@ -14,9 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=3.1">
     
-    <link rel="stylesheet" href="css/style.css?v=2.0">
-    <link rel="stylesheet" href="css/responsive.css?v=2.0">
+    <style>
+        .lang-switch { display: flex; align-items: center; gap: 10px; margin-right: 15px; }
+        .lang-btn { background: none; border: none; color: #666; cursor: pointer; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .lang-btn.active { color: #d4af37; text-decoration: underline; }
+        .lang-btn:hover { color: #fff; }
+    </style>
 </head>
 <body>
 
@@ -26,161 +31,121 @@
                 <img src="img/logo/logo.svg" alt="Jers Web Solutions" class="logo-img">
             </a>
     
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="lang-switch">
+                    <button onclick="loadLanguage('es')" class="lang-btn active">ES</button>
+                    <span style="color:#444">|</span>
+                    <button onclick="loadLanguage('en')" class="lang-btn">EN</button>
+                </div>
+
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
     
             <ul class="nav-links">
-                <li><a href="/" class="active">Inicio</a></li>
-                <li><a href="servicios">Servicios</a></li>
-                <li><a href="portafolio">Portafolio</a></li>
-                <li><a href="paquetes">Planes</a></li>
-                <li><a href="contacto" class="btn btn-primary">Cotizar <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="/" class="active" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="servicios" data-i18n="nav_expertise">Expertise</a></li>
+                <li><a href="portafolio" data-i18n="nav_process">Consultoría</a></li>
+                <li><a href="https://wa.me/573102948255?text=Hola,%20necesito%20una%20auditoría%20para%20mi%20landing%20page" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="nav_cta">Solicitar Auditoría</span>
+                </a></li>
             </ul>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container" data-aos="fade-up">
-            <span class="badge">🚀 Development & Growth</span>
-            <h1>Arquitectura Digital <br><span class="text-gold">De Alto Nivel</span></h1>
-            <p>Transformamos ideas en imperios digitales. Más de una década creando software que factura, escala y lidera mercados.</p>
+            <span class="badge" data-i18n="hero_badge">🏆 Jers Web Solutions: Expertos en Conversión</span>
+            
+            <h1 data-i18n="hero_title">No diseñamos webs.<br>Construimos <span class="text-gold">Máquinas de Ventas</span>.</h1>
+            
+            <p data-i18n="hero_desc">Soy especialista en Landing Pages de Alta Conversión. Si estás invirtiendo en publicidad y no vendes, el problema es tu web. Déjame auditar tu estrategia y escalar tu facturación.</p>
+            
             <div class="hero-btns" style="display: flex; justify-content: center; gap: 20px;">
-                <a href="servicios" class="btn btn-primary">Nuestros Servicios</a>
-                <a href="portafolio" class="btn btn-outline">Ver Experiencia</a>
+                <a href="https://wa.me/573102948255?text=Quiero%20hablar%20con%20el%20experto" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> <span data-i18n="hero_btn_primary">Hablar con el Experto</span>
+                </a>
+                <a href="portafolio" class="btn btn-outline" data-i18n="hero_btn_secondary">Ver Casos de Éxito</a>
             </div>
         </div>
     </header>
 
     <section class="stats-bar" data-aos="fade-up">
         <div class="container stats-grid">
-            <div class="stat-item"><h3>+10</h3><p>Años de Experiencia</p></div>
-            <div class="stat-item"><h3>+200</h3><p>Proyectos Exitosos</p></div>
-            <div class="stat-item"><h3>98%</h3><p>Retención de Clientes</p></div>
-            <div class="stat-item"><h3>24/7</h3><p>Soporte Crítico</p></div>
+            <div class="stat-item"><h3>+5</h3><p data-i18n="stats_exp">Años Optimizando Embudos</p></div>
+            <div class="stat-item"><h3>+50</h3><p data-i18n="stats_projects">Landing Pages Rentables</p></div>
+            <div class="stat-item"><h3>100%</h3><p data-i18n="stats_roi">Clientes Satisfechos</p></div>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>¿Por qué <span class="text-gold">JERS</span>?</h2>
-                <p>Nos diferenciamos por la calidad del código y la obsesión por los detalles.</p>
+                <h2 data-i18n="problem_title">¿Tu Tráfico se <span class="text-gold">Desperdicia</span>?</h2>
+                <p data-i18n="problem_desc">La mayoría de agencias hacen webs "bonitas". Yo hago webs que funcionan. Mi enfoque es técnico y psicológico.</p>
             </div>
             <div class="grid-3">
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-server service-icon"></i>
-                    <h3>Infraestructura Robusta</h3>
-                    <p>Servidores optimizados para soportar alto tráfico. Tu web nunca se caerá en pleno lanzamiento.</p>
+                    <i class="fas fa-brain service-icon"></i>
+                    <h3 data-i18n="card_1_title">Arquitectura Persuasiva</h3>
+                    <p data-i18n="card_1_desc">Diseño cada sección con neuroventas para guiar al usuario hacia la compra sin fricción.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-shield-alt service-icon"></i>
-                    <h3>Seguridad Bancaria</h3>
-                    <p>Protección contra ataques DDoS, encriptación SSL y firewalls avanzados.</p>
+                    <i class="fas fa-chess-king service-icon"></i>
+                    <h3 data-i18n="card_2_title">Consultoría Estratégica</h3>
+                    <p data-i18n="card_2_desc">No solo te entrego código. Te asesoro sobre cómo estructurar tu oferta para que sea irresistible.</p>
                 </div>
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-magic service-icon"></i>
-                    <h3>UX que Enamora</h3>
-                    <p>Diseños pensados en la psicología del usuario para aumentar la tasa de conversión.</p>
+                    <i class="fas fa-tachometer-alt service-icon"></i>
+                    <h3 data-i18n="card_3_title">Velocidad de Carga</h3>
+                    <p data-i18n="card_3_desc">Optimizamos cada línea de código. Una web lenta mata ventas. Las mías vuelan.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section bg-offset" style="padding: 60px 0;" data-aos="fade-up">
-        <div class="container" style="text-align: center;">
-            <p style="color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px;">Dominamos el Ecosistema Digital Completo</p>
-            <div class="tech-grid">
-                <div class="tech-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                <div class="tech-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
-                <div class="tech-item"><i class="fab fa-angular"></i><span>Angular</span></div>
-                <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
-                <div class="tech-item"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
-                <div class="tech-item"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
-                
-                <div class="tech-item"><i class="fab fa-node-js"></i><span>NodeJS</span></div>
-                <div class="tech-item"><i class="fab fa-php"></i><span>PHP</span></div>
-                <div class="tech-item"><i class="fab fa-laravel"></i><span>Laravel</span></div>
-                <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
-                <div class="tech-item"><i class="fab fa-java"></i><span>Java</span></div>
-                <div class="tech-item"><i class="fas fa-database"></i><span>SQL/Mongo</span></div>
-                
-                <div class="tech-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
-                <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
-                <div class="tech-item"><i class="fab fa-aws"></i><span>AWS</span></div>
-            </div>
+    <section class="section bg-offset" style="padding: 100px 0; text-align: center;" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-gold" style="margin-bottom: 30px;" data-i18n="cta_mid_title">Deja de improvisar. Empieza a convertir.</h2>
+            <a href="https://wa.me/573102948255?text=Quiero%20una%20Landing%20que%20Venda" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" target="_blank">
+                <i class="fab fa-whatsapp"></i> <span data-i18n="cta_mid_btn">Quiero una Landing que Venda</span>
+            </a>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Casos de <span class="text-gold">Éxito</span></h2>
-                <p>Proyectos reales que generan facturación real.</p>
+                <h2 data-i18n="cases_title">Resultados <span class="text-gold">Reales</span></h2>
+                <p data-i18n="cases_desc">Empresas que confiaron en mi consultoría y hoy lideran su nicho.</p>
             </div>
             <div class="grid-3">
                 <div class="service-card" style="padding: 0; overflow: hidden;" data-aos="fade-up">
-                    <div style="height: 220px; background: #003355; display: flex; align-items: center; justify-content: center;">
-                        <h2 style="color: white; opacity: 0.8;">AIRCET</h2>
+                    <div style="height: 200px; background: #003355; display: flex; align-items: center; justify-content: center;">
+                        <h2 style="color: white; opacity: 0.9;">AIRCET</h2>
                     </div>
                     <div style="padding: 30px;">
                         <h3>AIRCET Ingeniería</h3>
-                        <p>Landing Page Industrial. Captación de contratos B2B.</p>
-                        <a href="portafolio" class="link-action text-gold">Ver Caso <i class="fas fa-arrow-right"></i></a>
+                        <p style="color:#888; font-size: 0.9rem;">Estrategia B2B Industrial</p>
+                        <a href="portafolio" class="link-action text-gold" data-i18n="case_btn">Analizar este Caso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card" style="padding: 0; overflow: hidden;" data-aos="fade-up" data-aos-delay="100">
-                    <div style="height: 220px; background: #d4af37; display: flex; align-items: center; justify-content: center;">
-                        <h2 style="color: black; opacity: 0.8;">JD INK</h2>
+                    <div style="height: 200px; background: #d4af37; display: flex; align-items: center; justify-content: center;">
+                        <h2 style="color: black; opacity: 0.9;">JD INK</h2>
                     </div>
                     <div style="padding: 30px;">
                         <h3>JD ThreadInk</h3>
-                        <p>Landing Page de Moda Urbana con catálogo visual.</p>
-                        <a href="portafolio" class="link-action text-gold">Ver Caso <i class="fas fa-arrow-right"></i></a>
+                        <p style="color:#888; font-size: 0.9rem;">E-commerce & Branding</p>
+                        <a href="portafolio" class="link-action text-gold" data-i18n="case_btn">Analizar este Caso <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="service-card success-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-trophy" style="font-size: 3rem; color: var(--gold-text); margin-bottom: 20px;"></i>
-                    <h3 style="color: white;">Tu Empresa</h3>
-                    <p style="color: #ddd; margin-bottom: 20px;">¿Listo para ser nuestro próximo caso de éxito?</p>
-                    <a href="contacto" class="btn btn-primary" style="padding: 10px 25px;">Empezar Ahora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section bg-offset" data-aos="fade-up">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lo Que Dicen Nuestros <span class="text-gold">Clientes</span></h2>
-                <p>Resultados reales, opiniones reales.</p>
-            </div>
-            <div class="grid-3">
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="client-img">
-                        <div class="client-info"><h4>Carlos Mendoza</h4><span>Gerente Operaciones</span></div>
-                    </div>
-                    <p class="testimonial-text">"Jers Web Solutions transformó nuestra presencia digital. Aumentamos leads en un 40%."</p>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="client-img">
-                        <div class="client-info"><h4>Juliana Díaz</h4><span>Fundadora E-commerce</span></div>
-                    </div>
-                    <p class="testimonial-text">"Entendieron mi marca a la perfección. El diseño es elegante y fácil de navegar."</p>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right quote-icon"></i>
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Cliente" class="client-img">
-                        <div class="client-info"><h4>Andrés Castillo</h4><span>CEO Startup</span></div>
-                    </div>
-                    <p class="testimonial-text">"Soporte 24/7 real. Solucionaron una emergencia en domingo en minutos."</p>
+                <div class="service-card success-card" data-aos="fade-up" data-aos-delay="200" style="border: 2px solid var(--gold-solid);">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--gold-text); margin-bottom: 20px;"></i>
+                    <h3 style="color: white;" data-i18n="final_cta_title">¿Listo para escalar?</h3>
+                    <p style="color: #ddd; margin-bottom: 20px;" data-i18n="final_cta_desc">Solo trabajo con marcas comprometidas. Si eres tú, hablemos.</p>
+                    <a href="https://wa.me/573102948255?text=Solicito%20Consultoría%201a1" class="btn btn-primary" style="padding: 10px 25px;" target="_blank" data-i18n="final_cta_btn">Agendar Consultoría 1 a 1</a>
                 </div>
             </div>
         </div>
@@ -190,61 +155,88 @@
         <div class="container">
             <div class="footer-grid-4">
                 <div class="footer-col">
-                    <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
-                    <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
+                    <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;" alt="Jers Logo">
+                    <p style="color: #888;" data-i18n="footer_txt">Especialista en Desarrollo Web y Estrategias de Conversión.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Navegación</h4>
+                    <h4 data-i18n="nav_expertise">Expertise</h4>
                     <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="servicios">Servicios</a></li>
-                        <li><a href="portafolio">Portafolio</a></li>
-                        <li><a href="paquetes">Planes</a></li>
-                        <li><a href="contacto">Contacto</a></li>
+                        <li><a href="/">Landing Pages</a></li>
+                        <li><a href="servicios">Consultoría</a></li>
+                        <li><a href="portafolio">Casos de Éxito</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="legal">Política de Privacidad</a></li>
-                        <li><a href="legal">Términos y Condiciones</a></li>
+                        <li><a href="legal">Privacidad</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="nav_cta">Contacto Directo</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-phone-alt"></i> +57 310 294 8255</li>
+                        <li><a href="https://wa.me/573102948255" target="_blank" style="color:var(--gold-text); font-weight:bold;"><i class="fab fa-whatsapp"></i> +57 310 294 8255</a></li>
                         <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2015 - 2026 Jers Web Solutions. Todos los derechos reservados.</div>
+            <div class="footer-bottom">&copy; 2026 Jers Web Solutions. All Rights Reserved.</div>
         </div>
     </footer>
 
     <div class="floating-container">
-        <a href="https://wa.me/573102948255" target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
-        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element"><i class="fab fa-instagram"></i><span class="float-tooltip">Instagram</span></a>
-        <div class="float-main"><i class="fas fa-comments"></i></div>
+        <a href="https://wa.me/573102948255?text=Hola,%20estoy%20en%20tu%20web" target="_blank" class="float-main">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. ¡ESTA ES LA LÍNEA QUE FALTA! (Sin esto, la web se ve vacía)
-        AOS.init(); 
+        // 1. INICIALIZAR ANIMACIONES
+        AOS.init();
 
+        // 2. SCRIPT DE MENÚ MÓVIL
         document.addEventListener('DOMContentLoaded', function() {
-            // Tu código del menú (déjalo igual, está bien)
-            const boton = document.querySelector('.hamburger') || document.querySelector('.menu-toggle') || document.querySelector('.nav-toggle');
-            const menu = document.querySelector('.nav-links') || document.querySelector('.nav-menu');
-    
-            if (boton && menu) {
-                boton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    menu.classList.toggle('active');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
                 });
             }
+            
+            // Cargar idioma por defecto
+            loadLanguage('es');
         });
+
+        // 3. SISTEMA DE TRADUCCIÓN (I18N)
+        async function loadLanguage(lang) {
+            try {
+                const response = await fetch(`lang/${lang}.json`);
+                if (!response.ok) throw new Error("No se encontró el archivo de idioma");
+                const translations = await response.json();
+                
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[key]) {
+                        if(translations[key].includes('<')) {
+                            element.innerHTML = translations[key];
+                        } else {
+                            element.innerText = translations[key];
+                        }
+                    }
+                });
+
+                // Actualizar estilo botones
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                const activeBtn = document.querySelector(`button[onclick="loadLanguage('${lang}')"]`);
+                if(activeBtn) activeBtn.classList.add('active');
+
+            } catch (error) {
+                console.error("Error cargando idioma:", error);
+            }
+        }
     </script>
 
 </body>
