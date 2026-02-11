@@ -23,3 +23,8 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
 # 5. PÁGINA 404 PERSONALIZADA
 ErrorDocument 404 /404.html
+
+# ... (código anterior) ...
+
+# 5. SEGURIDAD: Evitar que listen tus carpetas
+Options -Indexes
