@@ -1,30 +1,41 @@
-# ACTIVAR MOTOR DE REESCRITURA
-RewriteEngine On
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
 
-# 1. FORZAR HTTPS (Seguridad: Candadito verde siempre)
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # 1. FORZAR HTTPS (Seguridad)
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# 2. REDIRECCIONAR "index.html" a LA RAÍZ (Para que no salga "index" en la URL)
-# Si alguien escribe tudominio.com/index.html, lo manda a tudominio.com/
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.html [NC]
-RewriteRule ^ %1/ [R=301,L]
+    # 2. ELIMINAR LA EXTENSIÓN .html (Estética URL)
+    # Si el usuario pide /archivo.html, redirige a /archivo (externamente)
+    RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+    RewriteRule ^ /%1 [NC,L,R=301]
 
-# 3. ELIMINAR LA EXTENSIÓN .html DEL RESTO DE PÁGINAS
-# Si escriben "servicios.html", lo cambia visualmente a "servicios"
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
-RewriteRule ^ %1 [R=301,L]
+    # 3. MAPEO INTERNO (Funcionalidad)
+    # Si el usuario pide /archivo, el servidor busca /archivo.html internamente
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L]
 
-# 4. PERMITIR QUE FUNCIONEN LOS ENLACES SIN EXTENSIÓN
-# Le dice al servidor que si buscan "servicios", en realidad cargue "servicios.html" internamente
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+    # 4. MANEJO DE ERRORES PERSONALIZADO
+    ErrorDocument 404 /404.html
+</IfModule>
 
-# 5. PÁGINA 404 PERSONALIZADA
-ErrorDocument 404 /404.html
+# 5. COMPRESIÓN GZIP (Velocidad)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
 
-# ... (código anterior) ...
-
-# 5. SEGURIDAD: Evitar que listen tus carpetas
-Options -Indexes
+# 6. CACHÉ DE NAVEGADOR (Rendimiento)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/x-javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2

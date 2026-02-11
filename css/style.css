@@ -1,5 +1,5 @@
 /* ==========================================================================
-   JERS WEB SOLUTIONS - HOJA DE ESTILOS MAESTRA (V12.0 - ALIGNMENT FIX)
+   JERS WEB SOLUTIONS - HOJA DE ESTILOS MAESTRA (V19.0 - FINAL GLOBAL PRO)
    ========================================================================== */
 
 /* --- 1. CONFIGURACIÓN BASE --- */
@@ -8,11 +8,9 @@
     --bg-card: #0f0f0f;       
     --text-main: #ffffff;
     --text-muted: #b0b0b0; 
-    
     --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     --gold-text: #FBF5B7;
     --gold-solid: #d4af37;
-    
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -33,7 +31,7 @@ body {
 
 h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; letter-spacing: -0.02em; }
 a { text-decoration: none; color: inherit; transition: 0.4s ease; }
-ul { list-style: none; padding: 0; margin: 0; } /* RESET GLOBAL IMPORTANTE */
+ul { list-style: none; padding: 0; margin: 0; }
 img { max-width: 100%; display: block; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; width: 100%; }
 
@@ -62,10 +60,7 @@ img { max-width: 100%; display: block; }
     padding: 16px 40px; border-radius: 50px; font-weight: 800; font-size: 1rem; 
     cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; border: none;
 }
-.btn-primary { 
-    background: var(--gold-gradient) !important; color: #000 !important; 
-    box-shadow: 0 10px 40px rgba(179, 135, 40, 0.25); 
-}
+.btn-primary { background: var(--gold-gradient) !important; color: #000 !important; box-shadow: 0 10px 40px rgba(179, 135, 40, 0.25); }
 .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(179, 135, 40, 0.4); filter: brightness(1.1); }
 .btn-outline { background: transparent; border: 1px solid rgba(212, 175, 55, 0.5); color: var(--gold-text); }
 .btn-outline:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--gold-text); color: #fff; }
@@ -115,6 +110,18 @@ img { max-width: 100%; display: block; }
 .service-card p { color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; }
 .link-action { margin-top: auto; color: var(--gold-text); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
 
+/* Cards Compactas */
+.case-card-compact {
+    background: #0a0a0a; border-radius: 15px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; height: 100%; display: flex; flex-direction: column;
+}
+.case-card-compact:hover { transform: translateY(-5px); border-color: var(--gold-dim); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.case-img-area { height: 200px; display: flex; align-items: center; justify-content: center; }
+.case-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+.case-content h3 { font-size: 1.4rem; margin-bottom: 10px; color: #fff; }
+.case-content p { font-size: 0.95rem; color: #aaa; margin-bottom: 15px; line-height: 1.5; }
+.case-actions { margin-top: auto; display: flex; gap: 10px; flex-direction: column; }
+
 /* STATS */
 .stats-bar { border-block: 1px solid rgba(255,255,255,0.05); padding: 80px 0; background: #080808; margin-top: -80px; position: relative; z-index: 10; }
 .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; text-align: center; }
@@ -136,67 +143,42 @@ img { max-width: 100%; display: block; }
 .quote-icon { position: absolute; top: 30px; right: 30px; font-size: 2rem; color: rgba(212, 175, 55, 0.2); }
 .testimonial-text { font-style: italic; color: #ccc; font-size: 0.95rem; line-height: 1.6; }
 
-/* --- 6. FOOTER (ALINEACIÓN PERFECTA) --- */
-.footer-big { 
-    background: #020202; 
-    padding: 100px 0 40px; 
-    border-top: 1px solid rgba(255,255,255,0.05); 
-    margin-top: auto; 
-}
+/* CONTACTO ROBUSTO */
+.contact-split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-benefits { margin-bottom: 40px; }
+.benefit-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; color: #ddd; font-size: 1.1rem; }
+.benefit-item i { color: var(--gold-solid); font-size: 1.2rem; }
 
-.footer-grid-4 { 
-    display: grid; 
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr; 
-    gap: 60px; 
-    margin-bottom: 70px; 
-    text-align: left; 
-}
+.info-item { display: flex; align-items: center; gap: 20px; padding: 25px; background: rgba(255,255,255,0.03); border-radius: 15px; margin-bottom: 20px; transition: 0.3s; border: 1px solid transparent; }
+.info-item:hover { border-color: var(--gold-dim); background: rgba(255,255,255,0.05); }
+.info-icon { font-size: 1.8rem; color: var(--gold-solid); }
+.info-item h4 { font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
+.link-gold { color: var(--text-muted); font-size: 0.95rem; }
 
-.footer-col h4 { 
-    color: #fff; 
-    margin-bottom: 30px; 
-    font-size: 1.2rem; 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-    position: relative;
+.form-box { background: #0f0f0f; padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+.input-group { margin-bottom: 25px; position: relative; }
+.input-group input, .input-group textarea {
+    width: 100%; background: transparent; border: none; 
+    border-bottom: 2px solid rgba(255,255,255,0.1); 
+    padding: 10px 0; color: #fff; font-size: 1rem; outline: none; transition: 0.3s;
 }
+.input-group label { position: absolute; top: 10px; left: 0; color: #666; pointer-events: none; transition: 0.3s; }
+.input-group input:focus, .input-group input:valid,
+.input-group textarea:focus, .input-group textarea:valid { border-bottom-color: var(--gold-solid); }
+.input-group input:focus + label, .input-group input:valid + label,
+.input-group textarea:focus + label, .input-group textarea:valid + label { top: -20px; font-size: 0.8rem; color: var(--gold-solid); }
 
-/* Línea dorada */
-.footer-col h4::after {
-    content: ''; display: block; width: 30px; height: 2px;
-    background: var(--gold-solid); margin-top: 10px;
-}
-
-/* ALINEACIÓN DE LISTAS */
-.footer-links { padding: 0; margin: 0; }
-.footer-links li { 
-    margin-bottom: 15px; 
-    list-style: none; /* Asegura que no haya puntos */
-    padding-left: 0; /* Asegura que no haya sangría */
-}
+/* --- 6. FOOTER --- */
+.footer-big { background: #020202; padding: 100px 0 40px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: auto; }
+.footer-grid-4 { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 60px; margin-bottom: 70px; text-align: left; }
+.footer-col h4 { color: #fff; margin-bottom: 30px; font-size: 1.2rem; letter-spacing: 1px; text-transform: uppercase; position: relative; }
+.footer-col h4::after { content: ''; display: block; width: 30px; height: 2px; background: var(--gold-solid); margin-top: 10px; }
+.footer-links li { margin-bottom: 15px; }
 .footer-links a { color: var(--text-muted); font-size: 1rem; transition: 0.3s; display: block; }
 .footer-links a:hover { color: var(--gold-text); transform: translateX(5px); }
-
-.footer-contact { padding: 0; margin: 0; }
-.footer-contact li { 
-    display: flex; 
-    gap: 15px; 
-    color: var(--text-muted); 
-    font-size: 1rem; 
-    margin-bottom: 20px; 
-    align-items: flex-start;
-    padding-left: 0;
-    list-style: none;
-}
+.footer-contact li { display: flex; gap: 15px; color: var(--text-muted); font-size: 1rem; margin-bottom: 20px; align-items: flex-start; }
 .footer-contact i { color: var(--gold-solid); margin-top: 5px; font-size: 1.1rem; min-width: 20px; }
-
-.footer-bottom { 
-    border-top: 1px solid rgba(255,255,255,0.05); 
-    padding-top: 40px; 
-    text-align: center; 
-    color: #555; 
-    font-size: 0.9rem; 
-}
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; text-align: center; color: #555; font-size: 0.9rem; }
 
 /* FLOTANTE */
 .floating-container { position: fixed; bottom: 30px; right: 30px; z-index: 2000; }
@@ -218,6 +200,6 @@ img { max-width: 100%; display: block; }
     .hero h1 { font-size: 2.8rem; }
     .hero-btns { flex-direction: column; width: 100%; margin-top: 40px; }
     .hero-btns .btn { width: 100%; }
-    .grid-3, .footer-grid-4 { grid-template-columns: 1fr; }
+    .grid-3, .footer-grid-4, .contact-split-layout { grid-template-columns: 1fr; }
     .stats-grid { flex-direction: column; gap: 40px; }
 }

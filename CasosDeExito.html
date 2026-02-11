@@ -3,145 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Jers Web Solutions</title>
+    <title>Casos de Éxito | Jers Web Solutions</title>
     <link rel="icon" type="image/svg+xml" href="img/logo/favicon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css?v=2.0">
-    <link rel="stylesheet" href="css/responsive.css?v=2.0">
+    <link rel="stylesheet" href="css/style.css?v=21.0">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="/" class="logo">
-                <img src="img/logo/logo.svg" alt="Jers Web Solutions" class="logo-img">
-            </a>
-    
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+            <a href="index.html" class="logo"><img src="img/logo/logo.svg" alt="Jers Web" class="logo-img"></a>
+            <div style="display: flex; align-items: center;">
+                <div class="lang-switch">
+                    <button onclick="setLang('es')" id="btn-es" class="lang-btn active"><img src="img/icons/COL.avif" alt="COL"></button>
+                    <button onclick="setLang('en')" id="btn-en" class="lang-btn"><img src="img/icons/USA.jpg" alt="USA"></button>
+                </div>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
             </div>
-    
             <ul class="nav-links">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="servicios">Servicios</a></li>
-                <li><a href="portafolio" class="active">Portafolio</a></li>
-                <li><a href="paquetes">Planes</a></li>
-                <li><a href="contacto" class="btn btn-primary">Cotizar <i class="fas fa-arrow-right"></i></a></li>
+                <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+                <li><a href="CasosDeExito.html" class="active" data-i18n="nav_cases">Casos de Éxito</a></li>
+                <li><a href="https://wa.me/573102948255?text=Hola,%20quiero%20una%20landing%20page" class="btn btn-primary" target="_blank">
+                    <span data-i18n="nav_contact">Contacto Directo</span> <i class="fab fa-whatsapp"></i>
+                </a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="section" style="padding-top: 150px; text-align: center;">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Nuestra <span class="text-gold">Huella Digital</span></h2>
-                <p>Más de 200 proyectos entregados. Aquí una selección de nuestra experiencia.</p>
-            </div>
+    <header class="section bg-offset" style="padding-top: 150px; text-align: center;">
+        <div class="container">
+            <span class="badge" data-i18n="cases_page_badge">Resultados Reales</span>
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;" data-i18n="cases_page_title">Landing Pages que <span class="text-gold">Facturan</span></h1>
+            <p style="color: #bbb; max-width: 700px; margin: 0 auto; font-size: 1.1rem;" data-i18n="cases_page_desc">
+                Ejemplos reales de clientes que han transformado su negocio.
+            </p>
         </div>
     </header>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
         <div class="container">
-            
-            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
-                <div style="height: 250px; background: linear-gradient(45deg, #003355, #001f35); display: flex; align-items: center; justify-content: center;">
-                    <h2 style="font-size: 3rem; color: rgba(255,255,255,0.8);">AIRCET</h2>
-                </div>
-                <div style="padding: 40px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">AIRCET Ingeniería</h3>
-                    <span class="badge">Landing Page</span> <span class="badge">Industrial</span>
-                    <p style="margin-top: 20px; color: var(--text-muted);">
-                        Página de aterrizaje corporativa enfocada en la captación de clientes B2B para servicios de climatización y automatización.
-                    </p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <a href="https://www.aircetcol.com" target="_blank" class="link-gold" style="font-weight: 700; font-size: 0.95rem; text-decoration: none;">
-                            Visitar Sitio en Vivo <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
-                        </a>
+            <div class="grid-3">
+                
+                <div class="case-card-compact" data-aos="fade-up">
+                    <div class="case-img-area" style="background: #003355;">
+                        <h2 style="color: white; font-size: 2rem;">AIRCET</h2>
+                    </div>
+                    <div class="case-content">
+                        <h3>AIRCET Ingeniería</h3>
+                        <p data-i18n="case_aircet_desc">Landing Page Industrial para B2B.</p>
+                        <p class="text-gold" style="font-weight:700; margin-bottom: 20px;" data-i18n="case_aircet_stat">📈 +40% en Solicitudes</p>
+                        <div class="case-actions">
+                            <a href="https://aircetcol.com" target="_blank" class="btn btn-outline" style="font-size:0.85rem;" data-i18n="btn_view_landing">Ver Landing Page</a>
+                            <a href="https://wa.me/573102948255?text=Quiero%20una%20Landing%20como%20Aircet" class="btn btn-primary" style="font-size:0.85rem;" data-i18n="btn_want_same">Quiero mi página web ya <i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
-                <div style="height: 250px; background: linear-gradient(45deg, #d4af37, #aa8e29); display: flex; align-items: center; justify-content: center;">
-                    <h2 style="font-size: 3rem; color: #000;">JD INK</h2>
-                </div>
-                <div style="padding: 40px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">JD ThreadInk</h3>
-                    <span class="badge">Landing Page</span> <span class="badge">Moda</span>
-                    <p style="margin-top: 20px; color: var(--text-muted);">
-                        Landing Page de alto impacto visual para marca de ropa personalizada. Galería de estilos y contacto directo.
-                    </p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <a href="https://www.jdthreadink.com" target="_blank" class="link-gold" style="font-weight: 700; font-size: 0.95rem; text-decoration: none;">
-                            Visitar Sitio en Vivo <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
-                        </a>
+                <div class="case-card-compact" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-img-area" style="background: #d4af37;">
+                        <h2 style="color: black; font-size: 2rem;">JD INK</h2>
+                    </div>
+                    <div class="case-content">
+                        <h3>JD ThreadInk</h3>
+                        <p data-i18n="case_jd_desc">Landing Page Textil visual.</p>
+                        <p class="text-gold" style="font-weight:700; margin-bottom: 20px;" data-i18n="case_jd_stat">🚀 Posicionamiento Top</p>
+                        <div class="case-actions">
+                            <a href="https://jdthreadink.com" target="_blank" class="btn btn-outline" style="font-size:0.85rem;" data-i18n="btn_view_landing">Ver Landing Page</a>
+                            <a href="https://wa.me/573102948255?text=Quiero%20una%20Landing%20como%20JD" class="btn btn-primary" style="font-size:0.85rem;" data-i18n="btn_want_same">Quiero mi página web ya <i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
-                <div style="height: 250px; background: #E6D2B5; display: flex; align-items: center; justify-content: center;">
-                    <h2 style="font-size: 3rem; color: #5C4033;">BASSICA</h2>
-                </div>
-                <div style="padding: 40px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Bassica.co</h3>
-                    <span class="badge">E-Commerce</span> <span class="badge">Joyería</span>
-                    <p style="margin-top: 20px; color: var(--text-muted);">
-                        Tienda en línea completa para venta de bisutería fina. Pasarela de pagos Wompi y carrito de compras.
-                    </p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <a href="https://bassica.co/" target="_blank" class="link-gold" style="font-weight: 700; font-size: 0.95rem; text-decoration: none;">
-                            Visitar Sitio en Vivo <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
-                        </a>
+                <div class="case-card-compact" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-img-area" style="background: #00aaff;">
+                        <h2 style="color: white; font-size: 2rem;">CARBONATO</h2>
+                    </div>
+                    <div class="case-content">
+                        <h3>Carbonato</h3>
+                        <p data-i18n="case_carbonato_desc">Landing Page Lavandería a Domicilio.</p>
+                        <p class="text-gold" style="font-weight:700; margin-bottom: 20px;" data-i18n="case_carbonato_stat">⚡ Automatización Total</p>
+                        <div class="case-actions">
+                            <a href="#" class="btn btn-outline" style="font-size:0.85rem;" data-i18n="btn_view_landing">Ver Landing Page</a>
+                            <a href="https://wa.me/573102948255?text=Quiero%20una%20Landing%20como%20Carbonato" class="btn btn-primary" style="font-size:0.85rem;" data-i18n="btn_want_same">Quiero mi página web ya <i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
-            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
-                <div style="height: 250px; background: #111; display: flex; align-items: center; justify-content: center;">
-                    <h2 style="font-size: 3rem; color: #fff; border: 3px solid #fff; padding: 10px 30px;">SAHET</h2>
-                </div>
-                <div style="padding: 40px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Sahet.co</h3>
-                    <span class="badge">E-Commerce</span> <span class="badge">Ropa</span>
-                    <p style="margin-top: 20px; color: var(--text-muted);">
-                        Plataforma de moda urbana moderna. Integración con logística de envíos y control de inventario.
-                    </p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <a href="https://sahet.co/" target="_blank" class="link-gold" style="font-weight: 700; font-size: 0.95rem; text-decoration: none;">
-                            Visitar Sitio en Vivo <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
-                        </a>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 80px; max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-up">
+                <h3 style="margin-bottom: 20px; font-size: 2rem;" data-i18n="cases_more_title">Trayectoria Comprobada</h3>
+                <p style="color: #bbb; margin-bottom: 40px; font-size: 1.1rem; line-height: 1.6;" data-i18n="cases_more_desc">
+                    *Estos son solo 3 ejemplos de los más de 200 proyectos exitosos que hemos desarrollado.
+                </p>
+                <a href="https://wa.me/573102948255?text=Quiero%20empezar%20mi%20proyecto" class="btn btn-primary" style="font-size: 1.2rem; padding: 15px 40px;" target="_blank">
+                    <span data-i18n="btn_start_project">Empezar mi Proyecto Ahora</span> <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
-
-            <div class="card service-card" style="margin-bottom: 60px; padding: 0; overflow: hidden; display: flex; flex-direction: column;" data-aos="fade-up">
-                <div style="height: 250px; background: #4da6ff; display: flex; align-items: center; justify-content: center;">
-                    <h2 style="font-size: 3rem; color: #fff;">Carbonato</h2>
-                </div>
-                <div style="padding: 40px;">
-                    <h3 style="font-size: 2rem; margin-bottom: 10px;">Carbonato.co</h3>
-                    <span class="badge">Landing Page</span> <span class="badge">Servicios</span>
-                    <p style="margin-top: 20px; color: var(--text-muted);">
-                        Página de servicios de lavandería a domicilio. Sistema de agendamiento y cotización online.
-                    </p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                        <a href="https://carbonato.co/" target="_blank" class="link-gold" style="font-weight: 700; font-size: 0.95rem; text-decoration: none;">
-                            Visitar Sitio en Vivo <i class="fas fa-external-link-alt" style="margin-left: 8px;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; padding: 40px;" data-aos="fade-up">
-                <p style="color: #666; margin-bottom: 20px;">... y muchos más proyectos confidenciales bajo NDA.</p>
-                <a href="contacto" class="btn btn-primary">Iniciar Mi Proyecto</a>
-            </div>
-
         </div>
     </section>
 
@@ -149,62 +109,59 @@
         <div class="container">
             <div class="footer-grid-4">
                 <div class="footer-col">
-                    <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
-                    <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
+                    <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;" alt="Logo Footer">
+                    <p style="color: #888;" data-i18n="footer_txt">Agencia especializada en Diseño de Landing Pages.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Navegación</h4>
+                    <h4 data-i18n="footer_nav_title">Navegación</h4>
                     <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="servicios">Servicios</a></li>
-                        <li><a href="portafolio">Portafolio</a></li>
-                        <li><a href="paquetes">Planes</a></li>
-                        <li><a href="contacto">Contacto</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+                        <li><a href="CasosDeExito.html" data-i18n="nav_cases">Casos de Éxito</a></li>
+                        <li><a href="https://wa.me/573102948255?text=Contacto" target="_blank" data-i18n="nav_contact">Contacto Directo</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Legal</h4>
+                    <h4 data-i18n="footer_legal_title">Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="legal">Política de Privacidad</a></li>
-                        <li><a href="legal">Términos y Condiciones</a></li>
+                        <li><a href="PoliticasDePrivacidad.html" data-i18n="footer_privacy">Política de Privacidad</a></li>
+                        <li><a href="T&C.html" data-i18n="footer_terms">Términos y Condiciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="footer_contact_title">Contacto Directo</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-phone-alt"></i> +57 310 294 8255</li>
+                        <li><a href="https://wa.me/573102948255" target="_blank" style="color:var(--gold-text); font-weight:bold;"><i class="fab fa-whatsapp"></i> +57 310 294 8255</a></li>
                         <li><i class="fas fa-envelope"></i> contacto@jerswebsolutions.digital</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">&copy; 2015 - 2026 Jers Web Solutions. Todos los derechos reservados.</div>
+            <div class="footer-bottom">
+                &copy; 2026 Jers Web Solutions. <span data-i18n="footer_rights">Todos los derechos reservados.</span>
+            </div>
         </div>
     </footer>
 
     <div class="floating-container">
-        <a href="https://wa.me/573102948255" target="_blank" class="float-element"><i class="fab fa-whatsapp"></i><span class="float-tooltip">WhatsApp</span></a>
-        <a href="https://instagram.com/jerswebsolutions" target="_blank" class="float-element"><i class="fab fa-instagram"></i><span class="float-tooltip">Instagram</span></a>
-        <div class="float-main"><i class="fas fa-comments"></i></div>
+        <a href="https://wa.me/573102948255" target="_blank" class="float-main"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. ¡ESTA ES LA LÍNEA QUE FALTA! (Sin esto, la web se ve vacía)
-        AOS.init(); 
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tu código del menú (déjalo igual, está bien)
-            const boton = document.querySelector('.hamburger') || document.querySelector('.menu-toggle') || document.querySelector('.nav-toggle');
-            const menu = document.querySelector('.nav-links') || document.querySelector('.nav-menu');
-    
-            if (boton && menu) {
-                boton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    menu.classList.toggle('active');
+        AOS.init();
+        function setLang(lang) {
+            fetch(`lang/${lang}.json`).then(res => res.json()).then(data => {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (data[key]) el.innerHTML = data[key];
                 });
-            }
-        });
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', () => setLang('es'));
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if(hamburger) hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
     </script>
-
 </body>
-</html>
+</html> 
