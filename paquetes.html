@@ -198,16 +198,20 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true, offset: 100 });
-        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
-        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('active'); }); });
-        
-        // FAQ Script
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            item.querySelector('.faq-question').addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
+        // 1. ¡ESTA ES LA LÍNEA QUE FALTA! (Sin esto, la web se ve vacía)
+        AOS.init(); 
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tu código del menú (déjalo igual, está bien)
+            const boton = document.querySelector('.hamburger') || document.querySelector('.menu-toggle') || document.querySelector('.nav-toggle');
+            const menu = document.querySelector('.nav-links') || document.querySelector('.nav-menu');
+    
+            if (boton && menu) {
+                boton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    menu.classList.toggle('active');
+                });
+            }
         });
     </script>
 
