@@ -1,0 +1,25 @@
+# ACTIVAR MOTOR DE REESCRITURA
+RewriteEngine On
+
+# 1. FORZAR HTTPS (Seguridad: Candadito verde siempre)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. REDIRECCIONAR "index.html" a LA RAÍZ (Para que no salga "index" en la URL)
+# Si alguien escribe tudominio.com/index.html, lo manda a tudominio.com/
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s(.*)/index\.html [NC]
+RewriteRule ^ %1/ [R=301,L]
+
+# 3. ELIMINAR LA EXTENSIÓN .html DEL RESTO DE PÁGINAS
+# Si escriben "servicios.html", lo cambia visualmente a "servicios"
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# 4. PERMITIR QUE FUNCIONEN LOS ENLACES SIN EXTENSIÓN
+# Le dice al servidor que si buscan "servicios", en realidad cargue "servicios.html" internamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# 5. PÁGINA 404 PERSONALIZADA
+ErrorDocument 404 /404.html

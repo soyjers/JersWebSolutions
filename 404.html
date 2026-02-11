@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .error-page {
+        .error-container {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -19,37 +19,30 @@
             position: relative;
             overflow: hidden;
         }
-        /* Texto gigante de fondo */
-        .big-404 {
-            font-size: 20vw; /* Gigante responsivo */
+        .big-text {
+            font-size: 15rem;
             font-weight: 900;
             line-height: 0.8;
-            opacity: 0.03; /* Muy sutil */
+            color: rgba(255,255,255,0.02);
             position: absolute;
             z-index: 0;
-            pointer-events: none;
-            color: #fff;
+            user-select: none;
         }
-        .content-404 { position: relative; z-index: 1; padding: 0 20px; }
-        .content-404 h2 { font-size: 3rem; margin-bottom: 20px; color: #fff; }
-        .content-404 p { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 40px; }
+        .content-front { position: relative; z-index: 1; padding: 0 20px; }
     </style>
 </head>
 <body>
 
-    <div class="error-page">
-        <div class="big-404">404</div>
+    <div class="error-container">
+        <div class="big-text">404</div>
         
-        <div class="content-404">
-            <div style="font-size: 4rem; color: var(--gold-solid); margin-bottom: 20px;">
-                <i class="fas fa-compass"></i>
-            </div>
-            <h2>Ruta Extraviada</h2>
-            <p>Parece que la página que buscas no existe o ha sido movida a otro servidor.</p>
-            
-            <a href="index.html" class="btn btn-primary">
-                <i class="fas fa-home"></i> Regresar a la Base
-            </a>
+        <div class="content-front">
+            <i class="fas fa-compass text-gold" style="font-size: 4rem; margin-bottom: 20px;"></i>
+            <h1 style="font-size: 3rem; margin-bottom: 15px;">Ruta Extraviada</h1>
+            <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 40px;">
+                La página que buscas no existe o ha sido movida dentro de nuestro ecosistema digital.
+            </p>
+            <a href="index" class="btn btn-primary">Regresar a la Base</a>
         </div>
     </div>
 

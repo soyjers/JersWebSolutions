@@ -14,14 +14,20 @@
 
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo"><img src="img/logo/logo.svg" class="logo-img"></a>
-            <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="paquetes.html">Planes</a></li>
-                <li><a href="portafolio.html">Portafolio</a></li>
-                <li><a href="contacto.html" class="btn btn-primary">Cotizar</a></li>
+            <a href="/" class="logo">
+                <img src="img/logo/logo.svg" alt="Jers Web Solutions" class="logo-img">
+            </a>
+    
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+    
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="servicios">Servicios</a></li>
+                <li><a href="portafolio">Portafolio</a></li>
+                <li><a href="paquetes">Planes</a></li>
+                <li><a href="contacto" class="active text-gold">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -86,36 +92,44 @@
                     <div class="form-box">
                         <h3 style="margin-bottom: 30px; text-align: center;">Cuéntanos tu Proyecto</h3>
                         
-                        <form action="#" method="POST">
+                        <form action="https://formsubmit.co/contacto@jerswebsolutions.digital" method="POST" class="form-box">
+    
+                            <input type="hidden" name="_next" value="https://jerswebsolutions.digital/enviado">
+                            <input type="hidden" name="_subject" value="🚀 Nuevo Cliente - Jers Web Solutions">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                        
                             <div class="input-group">
-                                <input type="text" id="name" name="name" required placeholder=" ">
-                                <label for="name">Nombre Completo</label>
+                                <input type="text" name="nombre" placeholder=" " required>
+                                <label>Nombre Completo</label>
                             </div>
-
+                        
                             <div class="input-group">
-                                <input type="email" id="email" name="email" required placeholder=" ">
-                                <label for="email">Correo Electrónico</label>
+                                <input type="email" name="email" placeholder=" " required>
+                                <label>Correo Electrónico</label>
                             </div>
-
+                        
                             <div class="input-group">
-                                <select id="service" name="service" required style="color: #fff;">
+                                <select name="servicio" required>
                                     <option value="" disabled selected></option>
-                                    <option value="web" style="background:#111;">Desarrollo Web / Landing</option>
-                                    <option value="ecommerce" style="background:#111;">Tienda Online (E-commerce)</option>
-                                    <option value="app" style="background:#111;">Aplicación Web / SaaS</option>
-                                    <option value="ads" style="background:#111;">Publicidad Digital (Ads)</option>
-                                    <option value="branding" style="background:#111;">Diseño & Branding</option>
-                                    <option value="otro" style="background:#111;">Otro / Consulta</option>
+                                    <option value="Desarrollo Web">Desarrollo Web</option>
+                                    <option value="Landing Page">Landing Page</option>
+                                    <option value="E-Commerce">Tienda Online</option>
+                                    <option value="Marketing">Marketing Digital</option>
+                                    <option value="Otro">Otro requerimiento</option>
                                 </select>
-                                <label for="service" class="select-label">Servicio de Interés</label>
+                                <label class="select-label">¿Qué servicio buscas?</label>
                             </div>
-
+                        
                             <div class="input-group">
-                                <textarea id="message" name="message" required placeholder=" "></textarea>
-                                <label for="message">Detalles del Proyecto</label>
+                                <textarea name="mensaje" placeholder=" " required></textarea>
+                                <label>Cuéntanos sobre tu proyecto</label>
                             </div>
-
-                            <button href="404.html" type="submit" class="btn btn-primary" style="width: 100%;">Enviar Solicitud</button>
+                        
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Enviar Mensaje <i class="fas fa-paper-plane" style="margin-left: 8px;"></i>
+                            </button>
+                        
                         </form>
                     </div>
                 </div>
@@ -132,20 +146,21 @@
                     <img src="img/logo/logo.svg" style="height: 50px; margin-bottom: 20px;">
                     <p style="color: #888;">Agencia de desarrollo web y marketing digital enfocada en resultados.</p>
                 </div>
-                <div class="footer-col">
+                <div class="footer-links">
                     <h4>Navegación</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
-                        <li><a href="paquetes.html">Planes</a></li>
-                        <li><a href="portafolio.html">Portafolio</a></li>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="servicios">Servicios</a></li>
+                        <li><a href="portafolio">Portafolio</a></li>
+                        <li><a href="paquetes">Planes</a></li>
+                        <li><a href="contacto">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="legal.html">Política de Privacidad</a></li>
-                        <li><a href="legal.html">Términos y Condiciones</a></li>
+                        <li><a href="legal">Política de Privacidad</a></li>
+                        <li><a href="legal">Términos y Condiciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
