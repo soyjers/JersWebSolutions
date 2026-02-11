@@ -230,18 +230,15 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true, offset: 100 });
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
         
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
+        // El 'if' evita errores si en alguna página no hay menú
+        if(hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
             });
-        });
+        }
     </script>
-
 </body>
 </html>
